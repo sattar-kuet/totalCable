@@ -1,0 +1,59 @@
+2015-06-02 10:47:55 Error: Fatal Error (4): syntax error, unexpected '' => '' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [D:\xampp\htdocs\demo\app\Config\database.php, line 88]
+2015-06-02 10:47:55 Error: [FatalErrorException] syntax error, unexpected '' => '' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /demo/
+Stack Trace:
+#0 D:\xampp\htdocs\demo\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\xampp\htdocs...', 88)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\xampp\htdocs...', 88, Array)
+#2 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\xampp\htdocs...', 88, Array)
+#3 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-02 10:57:29 Error: Fatal Error (1): Class 'Plugin' not found in [D:\xampp\htdocs\demo\app\Config\bootstrap.php, line 115]
+2015-06-02 10:57:29 Error: [FatalErrorException] Class 'Plugin' not found
+Stack Trace:
+#0 D:\xampp\htdocs\demo\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Class 'Plugin' ...', 'D:\xampp\htdocs...', 115)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Plugin' ...', 'D:\xampp\htdocs...', 115, Array)
+#2 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 1, 'Class 'Plugin' ...', 'D:\xampp\htdocs...', 115, Array)
+#3 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-06 09:28:54 Error: [MissingControllerException] Controller class PostController could not be found.
+Exception Attributes: array (
+  'class' => 'PostController',
+  'plugin' => NULL,
+)
+Request URL: /demo/post
+Stack Trace:
+#0 D:\xampp\htdocs\demo\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-06 09:29:12 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [D:\xampp\htdocs\demo\app\Controller\PostsController.php, line 19]
+2015-06-06 09:29:12 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /demo/posts
+Stack Trace:
+#0 D:\xampp\htdocs\demo\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\xampp\htdocs...', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\xampp\htdocs...', 19, Array)
+#2 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\xampp\htdocs...', 19, Array)
+#3 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-06 09:29:43 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [D:\xampp\htdocs\demo\app\Controller\PostsController.php, line 24]
+2015-06-06 09:29:43 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /demo/posts
+Stack Trace:
+#0 D:\xampp\htdocs\demo\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'D:\xampp\htdocs...', 24)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'D:\xampp\htdocs...', 24, Array)
+#2 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'D:\xampp\htdocs...', 24, Array)
+#3 D:\xampp\htdocs\demo\lib\Cake\Core\App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-06 09:31:59 Error: [MissingActionException] Action PostsController::view() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'view',
+)
+Request URL: /demo/posts/view/2
+Stack Trace:
+#0 D:\xampp\htdocs\demo\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 D:\xampp\htdocs\demo\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 D:\xampp\htdocs\demo\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
