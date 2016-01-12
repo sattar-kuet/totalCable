@@ -1899,3 +1899,51 @@ Sat, 09 Jan 2016 07:29:32 +0000:Response from AnetApi:
 
 Sat, 09 Jan 2016 07:29:32 +0000: Response De-Serialization Begin
 Sat, 09 Jan 2016 07:29:32 +0000: Response De-Serialization End
+Tue, 12 Jan 2016 11:11:36 +0000: Request Serialization Begin
+Tue, 12 Jan 2016 11:11:39 +0000: Request  Serialization End
+Tue, 12 Jan 2016 11:11:39 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Tue, 12 Jan 2016 11:11:39 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452597092]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>1</amount>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Tue, 12 Jan 2016 11:11:39 +0000:Sending http request via Curl
+Tue, 12 Jan 2016 11:11:40 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452597092</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>1DB6298D21F276EA7692CE242CBA8A51</transHash><testRequest>0</testRequest><accountNumber /><accountType /><errors><error><errorCode>33</errorCode><errorText>Credit card number is required.</errorText></error><error><errorCode>33</errorCode><errorText>Expiration date is required.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Tue, 12 Jan 2016 11:11:40 +0000: Response De-Serialization Begin
+Tue, 12 Jan 2016 11:11:41 +0000: Response De-Serialization End
+Tue, 12 Jan 2016 11:13:43 +0000: Request Serialization Begin
+Tue, 12 Jan 2016 11:13:43 +0000: Request  Serialization End
+Tue, 12 Jan 2016 11:13:43 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Tue, 12 Jan 2016 11:13:43 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452597223]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>1</amount>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Tue, 12 Jan 2016 11:13:43 +0000:Sending http request via Curl
+Tue, 12 Jan 2016 11:13:45 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452597223</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>1DB6298D21F276EA7692CE242CBA8A51</transHash><testRequest>0</testRequest><accountNumber /><accountType /><errors><error><errorCode>33</errorCode><errorText>Credit card number is required.</errorText></error><error><errorCode>33</errorCode><errorText>Expiration date is required.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Tue, 12 Jan 2016 11:13:45 +0000: Response De-Serialization Begin
+Tue, 12 Jan 2016 11:13:45 +0000: Response De-Serialization End

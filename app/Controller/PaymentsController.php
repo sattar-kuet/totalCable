@@ -34,8 +34,8 @@ class PaymentsController extends AppController {
         $cardinfo = $this->PaidCustomer->query($sql);
         // Common setup for API credentials
         $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
-        $merchantAuthentication->setName("42UHbr9Qa9B"); // login id
-        $merchantAuthentication->setTransactionKey("36VMsXkr89Pq474U");
+        $merchantAuthentication->setName("95x9PuD6b2"); // login id
+        $merchantAuthentication->setTransactionKey("547z56Vcbs3Nz9R9");
         $refId = 'ref' . time();
 
         // Create the payment data for a credit card
