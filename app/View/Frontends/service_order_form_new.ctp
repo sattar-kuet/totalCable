@@ -961,10 +961,7 @@
                                 </div>
 
                             </div>
-                            <div class="alert alert-danger">
-                                <span class="label label-danger">NOTE</span> £80 will be charged as additional per box bill. £50 will be charged as SD for per box. 
-                                <div class="btn btn-primary pull-right"  id="shipbutton" style="margin-right: 8px; margin-top: -8px;"><a style="color: aliceblue;" href="<?php echo Router::url(array('action' => 'terms_and_conditions')) ?>" >Terms & conditions </a></div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -1513,8 +1510,8 @@
 
                     </div>
                     &nbsp;
-                    
-                    <div class="">
+                    <div class="row">
+                    <div class="col-md-3">
                         <label  class="signupfont" for="exampleInputFile1">Card Holder's Signature:</label>&nbsp;
 
                                                 <!--<input type="file" name="data[PackageCustomer][ch_signature]" id="required">-->  
@@ -1527,6 +1524,21 @@
                                 )
                         );
                         ?>
+                    </div>
+                        <div class="col-md-3">
+                        <label  class="signupfont" for="exampleInputFile1">Card Holder's ID Card:</label>&nbsp;
+
+                                                <!--<input type="file" name="data[PackageCustomer][ch_signature]" id="required">-->  
+                        <?php
+                        echo $this->Form->input(
+                                'id_card', array(
+                            'type' => 'file',
+                            
+                            'id' => 'cardsig'
+                                )
+                        );
+                        ?>
+                    </div>
                     </div>
 
                     <div class="checkbox-list">

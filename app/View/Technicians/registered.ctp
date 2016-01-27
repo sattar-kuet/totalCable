@@ -29,7 +29,7 @@
                         <span class="icon16 icomoon-icon-arrow-right-2"></span>
                     </span>
                 </li>
-                <li class="active">All Orders</li>
+                <li class="active">Your Achievement</li>
             </ul>
             
 
@@ -43,16 +43,28 @@
 
                 <div class="box gradient">
 
-                    
+                    <div class="title">
+                        <h4>
+                            <span><?php 
+                            if(count($customer_info)<1) {
+                               echo 'No Record Found!'; 
+                            }
+                            else {
+                                echo $customer_info['0']['User']['name']; 
+                            }
+                            ?>
+                                </span>
+                           
+                        </h4>
+                    </div>
                     <?php echo $this->Session->flash(); ?>
                     <div class="content noPad clearfix">
                         <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Email</th>
+                                    <th>Form id</th>
                                     <th>Customer Name</th>
                                     <th>Registration Date</th>
-                                    <th>Filled-up by</th>
                                     <th>Detail</th>
                                     
                                 </tr>
@@ -62,21 +74,18 @@
                                 <?php
                                 foreach ($customer_info as $single):
                                     $put = $single['PackageCustomer'];
-                                    $tech_info = $single['User'];
-                                //pr($tech_info);exit;
-                                    ?>
                                 
+                                    ?>
+
                                     <tr class="odd gradeX">
 
-                                        <td><?php echo $put['email']; ?></td>
+                                        <td><?php echo $put['id']; ?></td>
                                         <td><?php echo $put['first_name']; echo ' '; echo $put['middle_name']; echo ' '; echo $put['last_name']; ?></td>
                                         <td><?php
                                         $date = date("M d, Y", strtotime($put['created']));
                                         echo $date
                                         ?></td>
-                                        <td>
-                                            <?php echo $tech_info['name']; ?>
-                                        </td>
+                                        
                                         
                                         <td>   
                                             <div class="controls center">

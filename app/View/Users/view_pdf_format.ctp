@@ -83,8 +83,8 @@ ob_start();
                    <?php echo $temp['PackageCustomer']['service_type'];?>                 
             </td>
             <td width="20%">
-                <b> Installation type: </b>             
-                   <?php echo $temp['PackageCustomer']['service_type'];?>                 
+                <b> Package: </b>             
+                   <?php echo $temp['Psetting']['offer'];?>                 
             </td>
         </tr>
     </table>
@@ -328,7 +328,7 @@ ob_start();
         <tbody>          
             <tr>
                 <td>
-                    STE TOP BOX 
+                    SET TOP BOX 
                 </td>
                 <td>
                     <?php                    
@@ -413,7 +413,7 @@ ob_start();
         <tbody>          
             <tr>
                 <td>
-                    STE TOP BOX 
+                    SET TOP BOX 
                 </td>
                 <td>
                     <?php
