@@ -89,17 +89,13 @@ class UsersController extends AppController {
                 $to = array($mail_data['User']['email']);
                 $mail_content = __('Name:', 'beopen') . $user_name . PHP_EOL .
                         __('Email:', 'beopen') . $email_user . PHP_EOL .
-                        __('Password:', 'beopen') . $password . PHP_EOL .                        
+                        __('Password:', 'beopen') . $password . PHP_EOL .
                         __($url = Router::url(array("controller" => "users", "action" => "login"), true));
 
                 sendEmail($from, $user_name, $to, $subject, $mail_content);
-             
+
                 // End send mail : for user
-                
-                
-                
                 // send mail : for admin
-                
 //                $from = $mail_data['User']['email'];
 //                $subject = "New technician registration";
 //                $user_name = $mail_data['User']['name'];
@@ -113,7 +109,6 @@ class UsersController extends AppController {
 //                        __($url = Router::url(array("controller" => "users", "action" => "login"), true));
 //
 //                sendEmail($from, $user_name, $to, $subject, $mail_content);
-
                 // End send mail : for admin
 
                 $msg = '<div class="alert alert-success">
@@ -428,6 +423,21 @@ class UsersController extends AppController {
         $this->set(compact('complain_checks'));
     }
 
+    function service_order_notchecked() {
+        $this->loadModel('Customer');
+        $order_notchecked = $this->Customer->find('all', array('conditions' => array('Customer.status' => 'not checked'), 'order' => array('Customer.created DESC')));
+        $this->set(compact('order_notchecked'));
+    }
+
+    function service_order_checked() {
+        $this->loadModel('Customer');
+        $order_checked = $this->Customer->find('all', array('conditions' => array('Customer.status' => 'checked'), 'order' => array(
+                'Customer.created DESC'
+        )));
+
+        $this->set(compact('order_checked'));
+    }
+
     function addstate() {
         $this->loadModel('TariffCountry');
         if ($this->request->is('post')) {
@@ -692,6 +702,27 @@ class UsersController extends AppController {
         return $this->redirect($this->referer());
     }
 
+    function check_order($id = null) {
+        $this->loadModel('Customer');
+        $this->loadModel('User');
+        if ($this->Auth->loggedIn()) {
+            $admin = $this->Auth->user();
+            $userId = $admin['id'];
+
+            $this->Customer->id = $id;
+
+            $this->Customer->saveField('user_id', $userId);
+            $this->Customer->saveField("status", "checked");
+
+            $msg = '<div class="alert alert-success">
+ <button type="button" class="close" data-dismiss="alert">&times;</button>
+ <strong> This order checked by admin succeesfully </strong>
+</div>';
+            $this->Session->setFlash($msg);
+            return $this->redirect($this->referer());
+        }
+    }
+
     function cancel_booking($id = null) {
         $this->loadModel('Seat');
         $this->Seat->id = $id;
@@ -702,6 +733,54 @@ class UsersController extends AppController {
 </div>';
         $this->Session->setFlash($msg);
         return $this->redirect($this->referer());
+    }
+    
+    function view_pdf($id = null) {
+        $this->layout = 'blank_page';
+        $this->loadModel('PackageCustomer');
+        $this->loadModel('User');
+        $this->PackageCustomer->id = $id;
+        $customer_info = $this->PackageCustomer->find('all', array('conditions' => array('id' => $id)));
+        $temp = $customer_info['0'];
+        $this->set(compact('temp'));
+        //pr($temp); exit;
+        $this->request->data = $this->PackageCustomer->findById($id);
+    }
+    
+    function achievement() {
+        $this->loadModel('PackageCustomer');
+        $this->loadModel('User');
+        
+        $user_id = $this->Auth->user(['id']);
+        //pr($user_id);exit;
+        $customer_info = $this->PackageCustomer->find('all', array('conditions' => array('user_id' => $user_id)));
+        //pr($customer_info); exit;
+        $this->set(compact('customer_info'));
+        
+    }
+    
+    function view_pdf_format($id = null) {
+        $this->layout = 'blank_page';
+        $this->loadModel('PackageCustomer');
+        $this->loadModel('User');
+        $this->PackageCustomer->id = $id;
+        $customer_info = $this->PackageCustomer->find('all', array('conditions' => array('PackageCustomer.id' => $id)));
+        $temp = $customer_info['0'];
+        //$datetime = $customer_info['0']['PackageCustomer']['created'];
+        //echo date_format($date, 'd/m/y');
+        //pr($temp); exit;
+        $userinfo = $this->Auth->user();
+        $installed_by = $userinfo['name'];
+        //$date = date("m/d/Y", strtotime($datetime));
+        $this->set(compact('temp'));
+        
+        $this->request->data = $this->PackageCustomer->findById($id);
+    }
+    function view_all() {
+        $this->loadModel('PackageCustomer');
+        $this->loadModel('User');
+        $customer_info = $this->PackageCustomer->find('all');          
+        $this->set(compact('customer_info','filled_by'));
     }
 
 }

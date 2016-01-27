@@ -38,7 +38,7 @@ class FrontendsController extends AppController {
         parent::beforeFilter();
         // Allow users to register and logout.
         //  $this->Auth->allow('*');
-        $this->Auth->allow(array('index','version', 'techregistration', 'shipping_and_returns', 'packagesignup', 'customerSignup', 'troubleshoot', 'tariffplan', 'whytotalcable', 'contactus', 'newses', 'reseller', 'shipping', 'package', 'terms_and_conditions', 'refer', 'channels', 'registration', 'musical_night', 'seat_booking', 'area_channels', 'hazaro_konthe_sonar_bangla'));
+        $this->Auth->allow(array('index', 'fileUpload', 'service_order_form_new', 'techregistration', 'shipping_and_returns', 'packagesignup', 'customerSignup', 'troubleshoot', 'tariffplan', 'whytotalcable', 'contactus', 'newses', 'reseller', 'shipping', 'package', 'terms_and_conditions', 'refer', 'channels', 'registration', 'musical_night', 'seat_booking', 'area_channels', 'hazaro_konthe_sonar_bangla'));
 
         // database name must be thum_img,small_img
         $this->img_config = array(
@@ -54,10 +54,18 @@ class FrontendsController extends AppController {
                 'image_x' => 421,
                 'image_y' => 295
             ),
+            //for attachment upload
+            'file' => array(
+//                'image_ratio_crop' => true,
+//                'image_resize' => true,
+//                'image_x' => 421,
+//                'image_y' => 295
+            ),
             'parent_dir' => 'card_holder_signature',
             'target_path' => array(
                 'ch_signature' => WWW_ROOT . 'card_holder_signature' . DS,
-                'c_signature' => WWW_ROOT . 'customer_signature' . DS
+                'c_signature' => WWW_ROOT . 'customer_signature' . DS,
+                'file' => WWW_ROOT . 'Customer_attachment' . DS
             )
         );
         if ($this->Auth->loggedIn()) {
@@ -205,7 +213,8 @@ class FrontendsController extends AppController {
         $this->set(compact('seats16', 'even15', 'even20', 'odd20', 'seats118', 'even9', 'odd9', 'odd15', 'even16', 'odd16', 'seats', 'even', 'odd', 'seats101'));
     }
 
-    function tariffplan() {
+//************** old tariffplan function, just rename it as 'tariffplan' to reuse.*********************************
+    function tariffplan_old() {
         $this->layout = 'public-package';
         $this->loadModel('Package');
         $this->loadModel('Psetting');
@@ -342,7 +351,7 @@ class FrontendsController extends AppController {
             $subject = "Complain";
             $cus_name = $this->request->data['Contactus']['name'];
             $email_custom = $this->request->data['Contactus']['email'];
-            $to = array('info@totalcableusa.com','sattar.kuet@gmail.com','rjasofttraning@gmail.com','rjasoft@gmail.com');
+            $to = array('info@totalcableusa.com', 'sattar.kuet@gmail.com', 'farukmscse@gmail.com');
             $phone_num = $this->request->data['Contactus']['phone_number'];
             $description = $this->request->data['Contactus']['message'];
             $mail_content = __('Name:', 'beopen') . $cus_name . PHP_EOL .
@@ -406,7 +415,7 @@ class FrontendsController extends AppController {
     }
 
     function terms_and_conditions() {
-        
+        $this->layout = 'public-package';
     }
 
     function channels() {
@@ -441,43 +450,73 @@ class FrontendsController extends AppController {
     }
 
     function packagesignup($package_id = null) {
-        $this->loadModel('User');
+        $this->loadModel('PackageCustomer');
         $this->loadModel('Country');
-        $this->loadModel('Role');
-        $role = $this->Role->findByName('customer');
+        //$this->loadModel('Role');
+        //  $role = $this->Role->findByName('customer');
         $this->layout = 'public-without-slider';
+
+
+
+        //siggup form package
+        $this->loadModel('Package');
+        $this->loadModel('Psetting');
+
+        $sql = "SELECT psettings.*  FROM packages
+                LEFT JOIN psettings ON packages.id=psettings.package_id               
+                 WHERE packages.name = 'Full package'
+                ";
+        $packages_full = $this->Package->query($sql);
+        $this->set(compact('packages_full'));
+
+        $sql = "SELECT psettings.*,packages.name  FROM packages
+                LEFT JOIN psettings ON packages.id=psettings.package_id               
+                 WHERE packages.name = 'NABC special package'
+                ";
+        $packages_special = $this->Package->query($sql);
+        $this->set(compact('packages_special'));
+
+        //end signup form for package
+
         if ($this->request->is('post')) {
-
-
-
-            $this->User->set($this->request->data);
+            $this->PackageCustomer->set($this->request->data);
             $msg = '';
 //pr($this->request->data); exit;
-            if ($this->User->validates()) {
-                //echo 'here'; exit;
-                //pr($this->request->data); exit;
-                // pr($this->request->data); exit;
-                $result = array();
-                $this->request->data['User']['role_id'] = $role['Role']['id'];
-                if (!empty($this->request->data['User']['ch_signature']['name'])) {
-                    $result = $this->processImg($this->request->data['User'], 'ch_signature');
-                    $this->request->data['User']['ch_signature'] = (string) $result['file_dst_name'];
-                }
-                if (!empty($this->request->data['User']['c_signature']['name'])) {
-                    $result = $this->processImg($this->request->data['User'], 'c_signature');
-                    $this->request->data['User']['c_signature'] = (string) $result['file_dst_name'];
-                }
-                $admin = $this->Auth->user();
-                $this->request->data['User']['filled-by'] = $admin['id'];
+            if ($this->PackageCustomer->validates()) {
 
-                $this->User->save($this->request->data['User']);
+                $result = array();
+                if (!empty($this->request->data['PackageCustomer']['ch_signature']['name'])) {
+                    $result = $this->processImg($this->request->data['PackageCustomer'], 'ch_signature');
+                    $this->request->data['PackageCustomer']['ch_signature'] = (string) $result['file_dst_name'];
+                } else {
+                    $this->request->data['PackageCustomer']['ch_signature'] = '';
+                }
+
+                if ($this->Auth->loggedIn()) {
+                    //$this->request->data['User']['psetting_id']='';
+                    $admin = $this->Auth->user();
+
+                    // todo count();
+                    $this->request->data['PackageCustomer']['user_id'] = $admin['id'];
+                } else {
+                    $value = $this->request->params['pass'][0];
+                    $this->request->data['PackageCustomer']['psetting_id'] = $value;
+                    $this->request->data['PackageCustomer']['filled-by'] = '0';
+                }
+
+
+                $dateObj = $this->request->data['PackageCustomer']['exp_date'];
+                $this->request->data['PackageCustomer']['exp_date'] = $dateObj['year'] . '-' . $dateObj['month'] . '-' . $dateObj['day'];
+//                pr($this->request->data);
+//                exit;
+                $this->PackageCustomer->save($this->request->data['PackageCustomer']);
 
                 $msg = '<div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong> Your sign up process completed succeesfully </strong>
             </div>';
             } else {
-                $msg = $this->generateError($this->User->validationErrors);
+                $msg = $this->generateError($this->PackageCustomer->validationErrors);
             }
             $this->Session->setFlash($msg);
             return $this->redirect($this->referer());
@@ -551,11 +590,62 @@ class FrontendsController extends AppController {
         if ($this->request->is('post')) {
             $this->Customer->set($this->request->data);
             if ($this->Customer->validates()) {
-//                pr($this->data);                exit();
+
+                // send mail :
+                $from = 'info@totalcableusa.com';
+                $subject = "Customer Signup";
+                //$to = array('sakibbd@ymail.com', 'sales@totaltvs.org', 'totaltvs.nihad@gmail.com', 'totaltvs.raisul@gmail.com', 'saleh.totaltvs@gmail.com'); 
+                $to = array('sakibbd@ymail.com',
+                    'farukmscse@gmail.com',
+                    'hrahman@totalcableusa.com',
+                    'totaltvs.nihad@gmail.com',
+                    'totaltvs.raisul@gmail.com',
+                    'saleh.totaltvs@gmail.com',
+                    'sattar.kuet@gmail.com',
+                    'mamun.totaltvs@gmail.com',
+                    'suman.totaltvs@gmail.com',
+                    'sarwar.totaltvs@gmail.com',
+                    'saadman.totaltvs@gmail.com',
+                    'rehab.totaltvs@gmail.com');
+
+                $cus_name = $this->request->data['Customer']['name'];
+                $address = $this->request->data['Customer']['address'];
+                $state = $this->request->data['Customer']['state'];
+                $phone = $this->request->data['Customer']['home_business'];
+                $cell = $this->request->data['Customer']['cell'];
+                $isp = $this->request->data['Customer']['internet_provider'];
+                $speed = $this->request->data['Customer']['internet_speed'];
+                $info_source = $this->request->data['Customer']['information_source'];
+
+                $refer_name = $this->request->data['Customer']['reference_name'];
+                $refer_no = $this->request->data['Customer']['reference_no'];
+
+                $sale_status = $this->request->data['Customer']['sale_status'];
+                $note = $this->request->data['Customer']['note'];
+
+
+                $mail_content = __('Name:                      ', 'beopen') . $cus_name . PHP_EOL .
+                        __('Address:                   ', 'beopen') . $address . PHP_EOL .
+                        __('State and Zip:             ', 'beopen') . $state . PHP_EOL .
+                        __('Home/Business phone no:    ', 'beopen') . $phone . PHP_EOL .
+                        __('Cell no:                   ', 'beopen') . $cell . PHP_EOL .
+                        __('Internet Speed:            ', 'beopen') . $speed . PHP_EOL .
+                        __('How did you hear about us: ', 'beopen') . $info_source . PHP_EOL;
+                if (!empty($refer_name)):
+                    $mail_content .= __('Reference Name:            ', 'beopen') . $refer_name . PHP_EOL .
+                            __('Reference Phone:           ', 'beopen') . $refer_no . PHP_EOL;
+                endif;
+
+                $mail_content .= __('Sale status:               ', 'beopen') . $sale_status . PHP_EOL .
+                        __('Note:                      ', 'beopen') . $note . PHP_EOL;
+
+                sendEmail($from, $cus_name, $to, $subject, $mail_content);
+                // End send mail 
+
                 $this->Customer->save($this->data);
                 $msg = '<div class="alert alert-success">
    <button type="button" class="close" data-dismiss="alert">&times;</button>
-   <strong> You have successfully signed up. We have sent you an email for your vairfication.</br>
+   <strong> You have successfully signed up.</br>
 Our support will contact you shortly.</br>
 Thank you, </br>
 
@@ -591,9 +681,121 @@ Total Cable USA. </strong>
             // return $this->redirect('create');
         }
     }
-    
-    function version(){
+
+    function fileUpload() {
+        $this->loadModel('Attachment');
+        if ($this->request->is('post')) {
+            $this->Attachment->set($this->request->data);
+            if ($this->Attachment->validates()) {
+                if (!empty($this->request->data['Attachment']['file']['name'])) {
+                    $result = $this->processImg($this->request->data['Attachment'], 'file');
+                    $this->request->data['Attachment']['file'] = (string) $result['file_dst_name'];
+                } else {
+                    $this->request->data['Attachment']['file'] = '';
+                }
+
+                // send mail :
+                $from = 'info@totalcableusa.com';
+                $subject = "Attachment from customer";
+                $to = array('sakibbd@ymail.com',
+                    'farukmscse@gmail.com',
+                    'hrahman@totalcableusa.com',
+                    'totaltvs.nihad@gmail.com',
+                    'totaltvs.raisul@gmail.com',
+                    'saleh.totaltvs@gmail.com',
+                    'sattar.kuet@gmail.com',
+                    'mamun.totaltvs@gmail.com',
+                    'suman.totaltvs@gmail.com',
+                    'sarwar.totaltvs@gmail.com',
+                    'saadman.totaltvs@gmail.com',
+                    'rehab.totaltvs@gmail.com');
+
+                $cus_name = $this->request->data['Attachment']['name'];
+                $address = $this->request->data['Attachment']['address'];
+                $cell = $this->request->data['Attachment']['cell'];
+
+                $file = $this->request->data['Attachment']['file'];
+
+                $mail_content = __('Name:                      ', 'beopen') . $cus_name . PHP_EOL .
+                        __('Address:                   ', 'beopen') . $address . PHP_EOL .
+                        __('Cell no:                   ', 'beopen') . $cell . PHP_EOL .
+                        __('Attached file:              ', 'beopen') . $file . PHP_EOL;
+
+                $attachment = array(
+                    'file' => ROOT . DS . 'app' . DS . 'webroot' . DS . 'Customer_attachment' . DS . $file,
+                    'mimetype' => 'image/png',
+                    'contentId' => 'utilityBill'
+                );
+                sendEmail($from, $cus_name, $to, $subject, $mail_content, $attachment);
+                // End send mail
+
+                $this->Attachment->save($this->request->data['Attachment']);
+                $msg = '<div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong> Your attachmet is succeesfully submitted.</strong>
+            </div>';
+            } else {
+                $msg = $this->generateError($this->Attachment->validationErrors);
+            }
+            $this->Session->setFlash($msg);
+            return $this->redirect($this->referer());
+        }
+    }
+
+    function tariffplan() {
         
+    }
+
+    function service_order_form_new($package_id = null) {
+        $this->loadModel('PackageCustomer');
+        $this->loadModel('Country');
+        //$this->loadModel('Role');
+        //  $role = $this->Role->findByName('customer');
+        $this->layout = 'public-without-slider';
+
+        if ($this->request->is('post')) {
+            $this->PackageCustomer->set($this->request->data);
+            $msg = '';
+//pr($this->request->data); exit;
+            if ($this->PackageCustomer->validates()) {
+
+                $result = array();
+                if (!empty($this->request->data['PackageCustomer']['ch_signature']['name'])) {
+                    $result = $this->processImg($this->request->data['PackageCustomer'], 'ch_signature');
+                    $this->request->data['PackageCustomer']['ch_signature'] = (string) $result['file_dst_name'];
+                } else {
+                    $this->request->data['PackageCustomer']['ch_signature'] = '';
+                }
+
+                if ($this->Auth->loggedIn()) {
+                    //$this->request->data['User']['psetting_id']='';
+                    $admin = $this->Auth->user();
+
+                    // todo count();
+                    $this->request->data['PackageCustomer']['user_id'] = $admin['id'];
+                } else {
+                    // $value = $this->request->params['pass'][0];
+                    // $this->request->data['PackageCustomer']['psetting_id'] = $value;
+                    $this->request->data['PackageCustomer']['filled-by'] = '0';
+                }
+
+
+                $dateObj = $this->request->data['PackageCustomer']['exp_date'];
+                $this->request->data['PackageCustomer']['exp_date'] = $dateObj['year'] . '-' . $dateObj['month'] . '-' . $dateObj['day'];
+                // pr($this->request->data);
+                //exit;
+                $this->PackageCustomer->save($this->request->data['PackageCustomer']);
+
+                $msg = '<div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong> Your sign up process completed succeesfully </strong>
+            </div>';
+            } else {
+                $msg = $this->generateError($this->PackageCustomer->validationErrors);
+            }
+            $this->Session->setFlash($msg);
+            return $this->redirect($this->referer());
+        }
     }
 
 }
