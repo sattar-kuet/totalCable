@@ -52,7 +52,7 @@
                                     <th>Email</th>
                                     <th>Customer Name</th>
                                     <th>Registration Date</th>
-                                    <th>Filled-up by</th>
+                                    <th>Installed by</th>
                                     <th>Detail</th>
                                     
                                 </tr>
