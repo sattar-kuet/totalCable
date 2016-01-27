@@ -5,7 +5,6 @@
 */
 class Agent extends AppModel
 {
-	var $name = "agent";
 
 	public $validate = array(
         'email' => array(
