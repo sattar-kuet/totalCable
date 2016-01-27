@@ -62,9 +62,9 @@
 
                         </ul>                        
                     </li>
-                    
-                    
-                     <li>
+
+
+                    <li>
                         <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Data Entry</a>
                         <ul class="sub">
                             <li>
@@ -76,7 +76,7 @@
 
                         </ul>                        
                     </li>
-                    
+
 
                     <li>
                         <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'emailsetting')) ?>"><span class="icon16 icomoon-icon-list-view-2"></span>Setting</a>
@@ -107,7 +107,19 @@
                                 <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'complain_checked')) ?>"><span class="icon16 icomoon-icon-arrow-right-2"></span>Checked Data</a>
                             </li> 
                         </ul> 
-                    </li>  
+                    </li> 
+
+                    <li>
+                        <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Service Order</a>
+                        <ul class="sub">                                         
+                            <li>
+                                <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'service_order_notchecked')) ?>"><span class="icon16 icomoon-icon-arrow-right-2"></span>Not Check Data</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'service_order_checked')) ?>"><span class="icon16 icomoon-icon-arrow-right-2"></span>Checked Data</a>
+                            </li> 
+                        </ul> 
+                    </li>
 
                     <li>
                         <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Package Management</a>
@@ -123,19 +135,37 @@
                             </li> 
                         </ul> 
                     </li>
+
+                    <li>
+                        <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Customers Order</a>
+                        <ul class="sub"> 
+                            <li>
+                                <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'view_all')) ?>"><span class="icon16 icomoon-icon-arrow-right-2"></span><strong>View All</strong></a>
+                            </li> 
+
+                            <?php
+                            foreach ($technician as $single):
+                                ?>
+                                <li>  
+                                    <a href="<?php echo Router::url(array('controller' => 'technicians', 'action' => 'registered', $single['u']['id'])) ?>"><span class="icon16 icomoon-icon-arrow-right-2"></span><?php echo $single['u']['name']; ?></a>
+                                </li>
+                            <?php endforeach ?>
+                        </ul> 
+                    </li>
+
                     <li>
                         <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Seat Management</a>
                         <ul class="sub">                                         
                             <li>
-                               
+
                                 <a target="_blank" href="<?php echo Router::url(array('controller' => 'users', 'action' => 'seat_booking')) ?>"><span class="icon16 icomoon-icon-arrow-right-2">Seat Management</a>
                             </li>
                             <li>
                                 <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'new_booking')) ?>"><span class="icon16 icomoon-icon-arrow-right-2">New Booking</a>
-                                
+
                             </li>
                         </ul> 
-                        
+
                     </li>
 
                 </ul>

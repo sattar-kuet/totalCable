@@ -43,9 +43,9 @@
 
                         Phone: 1-212-444-8138<br>
                         Fax: 6312400210<br>
-                        Email: <a href="mailto:Info@TotalCableUSA.com">Info@TotalCableUSA.com</a><br>
-                        Website: <a href="<?php echo Router::url(array('action' => 'index')) ?>">www.totalcableusa.com</a>
-
+                        Email: <a href="mailto:info@totalcableusa.com">info@totalcableusa.com</a><br>
+                        Website: <a href="<?php echo Router::url(array('action' => 'index')) ?>">www.totalcableusa.com</a><br>
+                        File upload: <a href="<?php echo Router::url(array('action' => 'fileUpload')) ?>">click here to upload your file</a>
                     </address>
 
                 </div>
@@ -69,21 +69,22 @@
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
             <div class="col-md-6 col-sm-6 padding-top-10">
-                2015 © Total Cable USA Inc. All Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                2008 © Total Cable USA Inc. All Rights Reserved. <a href="<?php echo Router::url(array('action' => 'terms_and_conditions')) ?>"><span class="footer">Terms & Conditions</span></a>
+                <!--<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>-->
             </div>
             <!-- END COPYRIGHT -->
             <!-- BEGIN PAYMENTS -->
             <div class="col-md-6 col-sm-6">
                 <ul class="social-footer list-unstyled list-inline pull-right">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                 <li><a href="https://www.facebook.com/TotalCable/?fref=ts"><i class="fa fa-facebook"></i></a></li>
+ <!--                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-skype"></i></a></li>
                     <li><a href="#"><i class="fa fa-github"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dropbox"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dropbox"></i></a></li>-->
                 </ul>  
             </div>
             <!-- END PAYMENTS -->
