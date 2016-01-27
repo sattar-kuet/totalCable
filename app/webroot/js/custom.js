@@ -27,16 +27,49 @@ $(document).ready(function () {
 
 
     $(function () {
-        $("input:radio[name='data[Customer][service_type]']").change(function () {
+        $("#info_source_id").change(function () {
+            
             var value = $(this).val();
-            if (value == 'other') {
-               $('#CustomerComment').show();
-                $('#CustomerComment').addClass('required');
+            
+            if (value == 'Other') {
+               $('#info').show();
+                $('#othersource').addClass('required');
             }
             else {
-               $('#CustomerComment').hide();
-                $('#CustomerComment').removeClass('required');
+               $('#info').hide();
+                $('#othersource').removeClass('required');
             }
+        });
+    });
+    
+    // for existing customer
+    $(function () {
+        $("#info_source_id").change(function () {
+            
+            var value = $(this).val();
+            
+            if (value == 'Existing Customer') {
+               $('#reference_info').show();
+                $('#r_name').addClass('required');
+                $('#r_no').addClass('required');
+            }
+            else {
+               $('#reference_info').hide();
+                $('#r_name').removeClass('required');
+                $('#r_no').removeClass('required');
+            }
+        });
+    });
+    
+    //Terms and Conditions 
+    $(function () {        
+        $("#signup").click(function (e) {
+            if ($('#agree').prop('checked')) {
+            
+        } else {
+            alert("You must agree with our Terms and Conditons");
+            e.preventDefault(); // this will prevent from submitting the form.
+        }                        
         });
     });
 });
