@@ -79,10 +79,13 @@ ob_start();
         <tr>
 
             <td width="20%">
-                Installation type:              
+                <b> Installation type: </b>             
                    <?php echo $temp['PackageCustomer']['service_type'];?>                 
             </td>
-
+            <td width="20%">
+                <b> Installation type: </b>             
+                   <?php echo $temp['PackageCustomer']['service_type'];?>                 
+            </td>
         </tr>
     </table>
     <table class="items" width="100%" style="font-size: 9pt; border-collapse: collapse;" cellpadding="8">

@@ -763,6 +763,7 @@ class UsersController extends AppController {
         $this->layout = 'blank_page';
         $this->loadModel('PackageCustomer');
         $this->loadModel('User');
+        $this->loadModel('Psetting');
         $this->PackageCustomer->id = $id;
         $customer_info = $this->PackageCustomer->find('all', array('conditions' => array('PackageCustomer.id' => $id)));
         $temp = $customer_info['0'];
