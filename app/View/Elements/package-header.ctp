@@ -28,7 +28,7 @@
                             if ($isloggedin == true) {
                                 $logout = Router::url(array('controller' => '/', 'action' => 'logout'));
                                 $profile = Router::url(array('controller' => '/', 'action' => 'profile'));
-                                $packagesignup = Router::url(array('controller' => '/', 'action' => 'packagesignup'));
+//                                $packagesignup = Router::url(array('controller' => '/', 'action' => 'packagesignup'));
                                 $links = array(
                                     array(
                                         'url' => $logout,
@@ -37,11 +37,12 @@
                                     array(
                                         'url' => $profile,
                                         'name' => 'Profile'
-                                    ),
-                                    array(
-                                        'url' => $packagesignup,
-                                        'name' => 'Package Signup'
                                     )
+//                                    ,
+//                                    array(
+//                                        'url' => $packagesignup,
+//                                        'name' => 'Package Signup'
+//                                    )
                                 );
                             } else {
                                 $login = Router::url(array('action' => 'login'));
@@ -54,12 +55,13 @@
                                     ),
                                     array(
                                         'url' => $customerSignup,
-                                        'name' => 'Registration'
-                                    ),
-                                    array(
-                                        'url' => $techRegistration,
-                                        'name' => 'Tech Registration'
+                                        'name' => 'Service Order'
                                     )
+//                                    ,
+//                                    array(
+//                                        'url' => $techRegistration,
+//                                        'name' => 'Tech Registration'
+//                                    )
                                 );
                             }
                             ?>
@@ -128,7 +130,7 @@
                             <li><a href="<?php echo Router::url(array('action' => 'reseller')) ?>" >Reseller</a></li>                  
                             <li><a href="<?php echo Router::url(array('action' => 'newses')) ?>" >News</a></li>
                             <!-- <li><a href="<?php echo Router::url(array('action' => 'musical_night')) ?>" >Musical Night</a></li>-->
-                            <li><a class="blink" style="color: #ff0000;" href="<?php echo Router::url(array('action' => 'hazaro_konthe_sonar_bangla')) ?>" >Events</a></li>
+                            <!--<li><a class="blink" style="color: #ff0000;" href="<?php // echo Router::url(array('action' => 'hazaro_konthe_sonar_bangla')) ?>" >Events</a></li>-->
                             <li><a href="<?php echo Router::url(array('action' => 'contactus')) ?>" >Contact Us</a></li>
 
                             <!-- ***************************** END OF MENU HERE************ -->

@@ -3,7 +3,7 @@
 <?php
 echo $this->Html->script(
         array(
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',
+            'jquery.min1',
             'bootstrap/bootstrap',
             'jquery.cookie',
             'jquery.mousewheel',
@@ -40,7 +40,7 @@ echo $this->Html->script(
             '/plugins/forms/tiny_mce/jquery.tinymce',
             '/plugins/forms/smartWizzard/jquery.smartWizard-2.0.min',
             '/plugins/fix/ios-fix/ios-orientationchange-fix',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js',
+            'jquery-ui.min',
             '/supr-theme/jquery-ui-timepicker-addon',
             '/supr-theme/jquery-ui-sliderAccess',
             '/plugins/fix/touch-punch/jquery.ui.touch-punch.min',

@@ -23,6 +23,9 @@
 
                 </li>-->
                 
+                  
+                  <!-- ################### Temorary off ########## 
+                  
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9000" data-thumb="../../assets/frontend/pages/img/revolutionslider/thumbs/thumb2.jpg">                        
                     <img src="<?php echo $this->webroot; ?>assets/frontend/pages/img/revolutionslider/bg3.jpg" alt="">
 
@@ -109,7 +112,8 @@
                     </div>
 
                 </li>
-
+                  -->
+                  
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="8000" data-thumb="../../assets/frontend/pages/img/revolutionslider/thumbs/thumb2.jpg">                        
                     <img src="<?php echo $this->webroot; ?>assets/frontend/pages/img/revolutionslider/bg12.jpg" alt="">
 

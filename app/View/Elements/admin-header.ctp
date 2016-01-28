@@ -82,16 +82,15 @@
         <div id="qLoverlay"></div>
         <div id="qLbar"></div>
 
-        <div id="header">
+        <div id="header" style="height: auto;">
 
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="container-fluid">
-                        <a class="brand" href="<?php echo Router::url(array('controller' => 'users', 'action' => 'dashboard')) ?>"><?php echo $admin_title; ?></a>
-                        <div class="nav-no-collapse">
+                        <!--<a class="brand" href="<?php echo Router::url(array('controller' => 'users', 'action' => 'dashboard')) ?>"><?php echo $admin_title; ?></a>-->
+                        <a  class="site-logo" target="_blank" href="<?php echo Router::url(array('controller' => '/', 'action' => 'index')) ?>"><img src="<?php echo $this->webroot; ?>assets/frontend/layout/img/logos/logo-corp-red.png" alt="Total Cable USA" title="Total Cable USA"></a>
+<!--                        <div class="nav-no-collapse">-->
                             <ul class="nav pull-right usernav">
-
-
                                 <li>
                                     <?php
                                     if ($admin_loggedIn == true):
@@ -103,7 +102,7 @@
 
                                 </li>
                             </ul>
-                        </div><!-- /.nav-collapse -->
+                       <!-- </div> /.nav-collapse -->
                     </div>
                 </div><!-- /navbar-inner -->
             </div><!-- /navbar --> 
