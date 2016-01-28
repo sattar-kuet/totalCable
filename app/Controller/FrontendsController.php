@@ -54,18 +54,20 @@ class FrontendsController extends AppController {
                 'image_x' => 421,
                 'image_y' => 295
             ),
-            //for attachment upload
+            //for attachment upload 
             'file' => array(
-//                'image_ratio_crop' => true,
-//                'image_resize' => true,
-//                'image_x' => 421,
-//                'image_y' => 295
+
+            ),
+            //for id card upload 
+            'id_card' => array(
+                
             ),
             'parent_dir' => 'card_holder_signature',
             'target_path' => array(
                 'ch_signature' => WWW_ROOT . 'card_holder_signature' . DS,
                 'c_signature' => WWW_ROOT . 'customer_signature' . DS,
-                'file' => WWW_ROOT . 'Customer_attachment' . DS
+                'file' => WWW_ROOT . 'Customer_attachment' . DS,
+                'id_card' => WWW_ROOT . 'Customer_id_card' . DS
             )
         );
         if ($this->Auth->loggedIn()) {
@@ -748,6 +750,7 @@ Total Cable USA. </strong>
 
     function service_order_form_new($package_id = null) {
         $this->loadModel('PackageCustomer');
+        $this->loadModel('CustomPackage');
         $this->loadModel('Country');
         //$this->loadModel('Role');
         //  $role = $this->Role->findByName('customer');
@@ -755,6 +758,7 @@ Total Cable USA. </strong>
 
         if ($this->request->is('post')) {
             $this->PackageCustomer->set($this->request->data);
+            $this->CustomPackage->set($this->request->data);
             $msg = '';
 //pr($this->request->data); exit;
             if ($this->PackageCustomer->validates()) {
@@ -765,6 +769,14 @@ Total Cable USA. </strong>
                     $this->request->data['PackageCustomer']['ch_signature'] = (string) $result['file_dst_name'];
                 } else {
                     $this->request->data['PackageCustomer']['ch_signature'] = '';
+                }
+                
+                //ID Card Upload
+                if (!empty($this->request->data['PackageCustomer']['id_card']['name'])) {
+                    $result = $this->processImg($this->request->data['PackageCustomer'], 'id_card');
+                    $this->request->data['PackageCustomer']['id_card'] = (string) $result['file_dst_name'];
+                } else {
+                    $this->request->data['PackageCustomer']['id_card'] = '';
                 }
 
                 if ($this->Auth->loggedIn()) {
@@ -784,6 +796,16 @@ Total Cable USA. </strong>
                 $this->request->data['PackageCustomer']['exp_date'] = $dateObj['year'] . '-' . $dateObj['month'] . '-' . $dateObj['day'];
                 // pr($this->request->data);
                 //exit;
+                $data4CustomPackage['CustomPackage']['duration'] = $this->request->data['PackageCustomer']['duration'];
+                $data4CustomPackage['CustomPackage']['charge'] = $this->request->data['PackageCustomer']['charge'];
+                
+                if(!empty($this->request->data['PackageCustomer']['charge'])){
+                  $cp = $this->CustomPackage->save($data4CustomPackage); 
+                  unset($cp['CustomPackage']['PackageCustomer']);                
+                  $this->request->data['PackageCustomer']['custom_package_id'] = $cp['CustomPackage']['id'];
+                  //pr($cp);exit;
+                }
+                
                 $this->PackageCustomer->save($this->request->data['PackageCustomer']);
 
                 $msg = '<div class="alert alert-success">

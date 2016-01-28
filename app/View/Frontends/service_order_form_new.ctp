@@ -967,7 +967,7 @@
                                                 <div class="tab-pane" id="contemporary">
                                                     <div class="panel-body">
                                                         <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="54">
+                                                            <div class="pricing hover-effect" id="59">
                                                                 <div id="fariff" class="pricing-head">
                                                                     <h3>1 Month <span> Billing Package </span></h3>
                                                                     <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
@@ -981,7 +981,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="55">
+                                                            <div class="pricing hover-effect" id="60">
                                                                 <div class="pricing-head">
                                                                     <h3>3 Month<span> Billing Package </span></h3>
                                                                     <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
@@ -995,7 +995,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="56"><!-- pricing-active  -->
+                                                            <div class="pricing hover-effect" id="61"><!-- pricing-active  -->
                                                                 <div class="pricing-head"><!-- pricing-head-active -->
                                                                     <h3>6 Month<span> Billing Package </span></h3>
                                                                     <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
@@ -1009,7 +1009,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="57">
+                                                            <div class="pricing hover-effect" id="62">
                                                                 <div class="pricing-head">
                                                                     <h3>1 Year<span> Billing Package </span></h3>
                                                                     <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
@@ -1028,7 +1028,7 @@
                                                 <div class="tab-pane" id="custom">
                                                     <div class="panel-body">
                                                         <div class="col-md-6 col-md-offset-3">
-                                                            <div class="pricing hover-effect" id="58">
+                                                            <div class="pricing hover-effect">
                                                                 <div class="pricing-head">
                                                                     <h3>Custom<span> Billing Package </span></h3>
 
