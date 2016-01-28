@@ -647,11 +647,9 @@ class FrontendsController extends AppController {
                 $this->Customer->save($this->data);
                 $msg = '<div class="alert alert-success">
    <button type="button" class="close" data-dismiss="alert">&times;</button>
-   <strong> You have successfully signed up.</br>
-Our support will contact you shortly.</br>
-Thank you, </br>
-
-Total Cable USA. </strong>
+  <h4><strong style= "color:#3c763d;!important"> You have successfully signed up ,Our support will contact you shortly.</br>
+Thank you,</br>
+<i class="fa fa-phone"></i><span>1-212-444-8138,</span>&nbsp;Total Cable USA. </strong></h4>
    </div>';
             } else {
                 $msg = $this->generateError($this->Customer->validationErrors);

@@ -27,12 +27,12 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3 style="color: #333333; text-align: justify; font-weight: 300;"> Thank you for visiting us. We are providing an IP television service which means our set-up box only needs Internet. Our requirement is just 5 Mbps Internet download speed. You can use our one box for your one television.</h3>
+                                    <h3 style="color: #333333; text-align: justify; font-weight: 300; font-size: 14px;"> Thank you for visiting us. We are providing an IP television service which means our set-up box only needs Internet. Our requirement is just 5 Mbps Internet download speed. You can use our one box for your one television.</h3>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 style="color: #5bc0de; text-transform: inherit;">Please fill up the required information below to confirm your order.</h1>
+                                    <h3 style="color: #5bc0de; text-transform: inherit;">Please fill up the required information below to confirm your order.</h3>
                                 </div>                            
                             </div> 
                         </div>
