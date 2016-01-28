@@ -44,14 +44,25 @@
                 <div class="box gradient">
 
                     <div class="title">
-                        
+                        <h4>
+                            <span><?php 
+                            if(count($customer_info)<1) {
+                               echo 'No Record Found!'; 
+                            }
+                            else {
+                                echo $customer_info['0']['User']['name']; 
+                            }
+                            ?>
+                                </span>
+                           
+                        </h4>
                     </div>
                     <?php echo $this->Session->flash(); ?>
                     <div class="content noPad clearfix">
                         <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Email</th>
+                                    <th>Form id</th>
                                     <th>Customer Name</th>
                                     <th>Registration Date</th>
                                     <th>Detail</th>
@@ -68,7 +79,7 @@
 
                                     <tr class="odd gradeX">
 
-                                        <td><?php echo $put['email']; ?></td>
+                                        <td><?php echo $put['id']; ?></td>
                                         <td><?php echo $put['first_name']; echo ' '; echo $put['middle_name']; echo ' '; echo $put['last_name']; ?></td>
                                         <td><?php
                                         $date = date("M d, Y", strtotime($put['created']));

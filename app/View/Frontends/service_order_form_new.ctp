@@ -132,11 +132,11 @@
 
                 <div class="row">
                     <div class="text-center">
-                    <div class="radio-list" style="margin-left: 20px;">
-                        <label class="radio-inline"><input type="radio" value="NEW INSTALLATION" name="data[PackageCustomer][service_type]">NEW INSTALLATION</label>
-                        <label class="radio-inline"><input type="radio" value="SERVICE REPAIR" name="data[PackageCustomer][service_type]">SERVICE REPAIR</label>
-                        <label class="radio-inline"><input type="radio" value="CANCEL SERVICE" name="data[PackageCustomer][service_type]">CANCEL SERVICE</label>
-                    </div>
+                        <div class="radio-list" style="margin-left: 20px;">
+                            <label class="radio-inline"><input type="radio" value="NEW INSTALLATION" name="data[PackageCustomer][service_type]">NEW INSTALLATION</label>
+                            <label class="radio-inline"><input type="radio" value="SERVICE REPAIR" name="data[PackageCustomer][service_type]">SERVICE REPAIR</label>
+                            <label class="radio-inline"><input type="radio" value="CANCEL SERVICE" name="data[PackageCustomer][service_type]">CANCEL SERVICE</label>
+                        </div>
                     </div>
                 </div>
 
@@ -379,1214 +379,1332 @@
                     </div>
                 </div>
                 &nbsp;
-               
-<!--               
-                             
-                Start of package info 
+
+                <!--               
+                                             
+                                Start of package info 
                 <?php
                 if ($isloggedin == true) {
                     ?>
-
-                    <div class="row">
-                        <div class="col-md-12 ">
-                             BEGIN SAMPLE FORM PORTLET
-                            <div class="portlet box"  style=" text-align: center; background-color: black;">
-                                <div class="portlet-title">
-                                    <div class="caption" id="blackcaption" >
-                                        Package Information
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel-group accordion" id="accordion1">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1" aria-expanded="false">
-                                                Full package </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                        <div class="panel-body">
-                                            <div class="">
-                                                <div class="">
-                                                    <div class="">
-
-                                                        <?php
-                                                        foreach ($packages_full as $package):
-                                                            echo $package['psettings']['offer'];
-                                                            $pid = $package['psettings']['id'];
-                                                            ?>
-                                                            <input class="PSID" type="hidden" value="<?php echo $pid; ?>">
-
+                                
+                                                    <div class="row">
+                                                        <div class="col-md-12 ">
+                                                             BEGIN SAMPLE FORM PORTLET
+                                                            <div class="portlet box"  style=" text-align: center; background-color: black;">
+                                                                <div class="portlet-title">
+                                                                    <div class="caption" id="blackcaption" >
+                                                                        Package Information
+                                                                    </div>
+                                
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2" aria-expanded="false">
-                                                    NABC special package </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapse_2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                            <div class="panel-body">
-
-
-
-
-                                                <?php
-                                                foreach ($packages_special as $package):
-                                                    echo $package['psettings']['offer'];
-                                                    $pid1 = $package['psettings']['id'];
-                                                    ?>
-                                                    <input class="PSID" type="hidden" value="<?php echo $pid1; ?>">
-
-                                                </div>
-                                            </div>
-
-                                        <?php endforeach; ?> 
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div> 
-                    </div>
-
-
-
-                </div>
-                <?php
-            }
-            ?>
-            End of package info -->
-            <div class="row">
-                <div class="col-md-12 ">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet box"  style=" text-align: center; background-color: black;">
-                        <div class="portlet-title">
-                            <div class="caption" id="blackcaption" >
-                                Package Information
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel-group accordion" id="accordion1">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1" aria-expanded="false">
-                                                All Packages </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                        <div class="panel-body">
-                                            
-                                            <div class="" style="">
-                    <div class="tabbable tabbable-custom">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#full">Full Package</a></li>
-                            <li><a data-toggle="tab" href="#nabc">NABC Special Package</a></li>
-                            <li><a data-toggle="tab" href="#new_york">New York</a></li>
-                            <li><a data-toggle="tab" href="#new_jersey">New Jersey</a></li>
-                            <li><a data-toggle="tab" href="#michigan">Michigan</a></li>
-                            <li><a data-toggle="tab" href="#texas">Texas</a></li>
-                            <li><a data-toggle="tab" href="#canada">Canada</a></li>
-                            <li><a data-toggle="tab" href="#uk">UK</a></li>
-
-                        </ul>
-                    </div>
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="full">
-                            <div class="panel-body">
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect" id="1">
-                                        <div id="fariff" class="pricing-head">
-                                            <h3>1 Month <span> Billing Package </span></h3>
-                                            <h4><em>$</em>40<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$40</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect" id="2">
-                                        <div class="pricing-head">
-                                            <h3>3 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$90</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect" id="3"><!-- pricing-active  -->
-                                        <div class="pricing-head"><!-- pricing-head-active -->
-                                            <h3>6 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$180</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect" id="4">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$360</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                           
-                                            <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="tab-pane" id="nabc">
-                            <div class="panel-body">
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div id="fariff" class="pricing-head">
-                                            <h3>1 Month <span> Billing Package </span></h3>
-                                            <h4><em>$</em>19<em>.99</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$19.99</strong></li> 
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>3 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>60<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$60</strong></li> 
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect"><!-- pricing-active  -->
-                                        <div class="pricing-head"><!-- pricing-head-active -->
-                                            <h3>6 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>120<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$120</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>$</em>240<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$240</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="tab-pane" id="new_york">
-                            <div class="panel-body">
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div id="fariff" class="pricing-head">
-                                            <h3>1 Month <span> Billing Package </span></h3>
-                                            <h4><em>$</em>40<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$40</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>3 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$90</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect"><!-- pricing-active  -->
-                                        <div class="pricing-head"><!-- pricing-head-active -->
-                                            <h3>6 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$180</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$360</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                           
-                                            <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="tab-pane" id="new_jersey">
-                            <div class="panel-body">
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div id="fariff" class="pricing-head">
-                                            <h3>1 Month <span> Billing Package </span></h3>
-                                            <h4><em>$</em>40<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$40</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>3 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$90</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect"><!-- pricing-active  -->
-                                        <div class="pricing-head"><!-- pricing-head-active -->
-                                            <h3>6 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$180</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$360</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                           
-                                            <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="tab-pane" id="michigan">
-                            <div class="panel-body">
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div id="fariff" class="pricing-head">
-                                            <h3>1 Month <span> Billing Package </span></h3>
-                                            <h4><em>$</em>30<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$30</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>3 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>75<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$75</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect"><!-- pricing-active  -->
-                                        <div class="pricing-head"><!-- pricing-head-active -->
-                                            <h3>6 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>150<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$150</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>$</em>300<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$300</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                           
-                                            <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="tab-pane" id="texas">
-                            <div class="panel-body">
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div id="fariff" class="pricing-head">
-                                            <h3>1 Month <span> Billing Package </span></h3>
-                                            <h4><em>$</em>30<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$30</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>3 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$90</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect"><!-- pricing-active  -->
-                                        <div class="pricing-head"><!-- pricing-head-active -->
-                                            <h3>6 Month<span> Billing Package </span></h3>
-                                            <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$180</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                            
-                                            <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>$360</strong></li>
-                                            <li>Security Deposit (SD): <strong>$50</strong></li>                                           
-                                            <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="tab-pane" id="canada">
-                            <div class="panel-body">
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div id="fariff" class="pricing-head">
-                                            <h3>1 Month <span> Billing Package </span></h3>
-                                            <h4><em>c$</em>25<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>c$25</strong></li>
-                                            <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>3 Month<span> Billing Package </span></h3>
-                                            <h4><em>c$</em>75<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>c$75</strong></li>
-                                            <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect"><!-- pricing-active  -->
-                                        <div class="pricing-head"><!-- pricing-head-active -->
-                                            <h3>6 Month<span> Billing Package </span></h3>
-                                            <h4><em>c$</em>150<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>c$150</strong></li>
-                                            <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
-                                            <li>Bonus: <strong>1 Months addition or c$40 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>c$</em>300<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>c$300</strong></li>
-                                            <li>Security Deposit (SD): <strong>c$50</strong></li>                                           
-                                            <li>Bonus: <strong>3 Months addition or c$100 calling card</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="tab-pane" id="uk">
-                            <div class="panel-body">
-                                <div class="col-md-4 col-md-offset-4">
-                                    <div class="pricing hover-effect">
-                                        <div class="pricing-head">
-                                            <h3>1 Year<span> Billing Package </span></h3>
-                                            <h4><em>‎£</em>85<em>.00</em> <span> For 1st Box </span></h4>
-                                        </div>
-                                        <ul class="pricing-content list-unstyled">
-                                            <li>Bill (For 1st Box): <strong>£85</strong></li>
-                                            <li>Security Deposit (SD): <strong>£50</strong></li>                                           
-                                            <li>Bonus: <strong>N/A</strong></li>
-                                        </ul>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="alert alert-danger">
-                                <span class="label label-danger">NOTE</span> £80 will be charged as additional per box bill. £50 will be charged as SD for per box. 
-                                <div class="btn btn-primary pull-right"  id="shipbutton" style="margin-right: 8px; margin-top: -8px;"><a style="color: aliceblue;" href="<?php echo Router::url(array('action' => 'terms_and_conditions')) ?>" >Terms & conditions </a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                            
-                                            
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div> 
-                    </div>
-
-
-
-
-            <div class="row">
-                <div class="col-md-12 ">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet box"  style=" text-align: center; background-color: black;">
-                        <div class="portlet-title">
-                            <div class="caption" id="blackcaption" >
-                                Payment
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 ">
-
-                    <div class="col-md-2">
-                        <span class="signupfont"> Security Deposit: </span>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="input-list style-4 clearfix">
-                            <div>
-                                <?php
-                                echo $this->Form->input(
-                                        'deposit', array(
-                                    'class' => 'required partial',
-                                            'type' => 'number'
-                                        )
-                                );
-                                ?> 
-                            </div>                            
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <span class="signupfont">Monthly Bill: </span>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="input-list style-4 clearfix">
-                            <div>
-                                <?php
-                                echo $this->Form->input(
-                                        'monthly_bill', array(
-                                    'class' => 'required partial',
-                                            'type' => 'number'
-                                        )
-                                );
-                                ?> 
-                            </div>                            
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <span class="signupfont">Others: </span>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="input-list style-4 clearfix">
-                            <div>
-                                <?php
-                                echo $this->Form->input(
-                                        'others', array(
-                                    'class' => 'partial',
-                                            'type' => 'number'
-                                        )
-                                );
-                                ?> 
-                            </div>                            
-                        </div>
-                    </div>
-                    <div class="col-md-1 signupfont">
-                        Total: 
-                    </div>
-                    <div class="col-md-2">
-                        <?php
-                        echo $this->Form->input(
-                                'total', array(
-                            'class' => 'form-control input-sm total',
-                            'type' => 'text',
-                            'readonly' => 'readonly'
-                                )
-                        );
+                                
+                                
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="panel-group accordion" id="accordion1">
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-heading">
+                                                                        <h4 class="panel-title">
+                                                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1" aria-expanded="false">
+                                                                                Full package </a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                                        <div class="panel-body">
+                                                                            <div class="">
+                                                                                <div class="">
+                                                                                    <div class="">
+                                
+                    <?php
+                    foreach ($packages_full as $package):
+                        echo $package['psettings']['offer'];
+                        $pid = $package['psettings']['id'];
                         ?>
-                    </div>                                                                          
-                </div>
-            </div>
-            &nbsp;
-
-
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="tablehead">
-                                        PAYMENT METHOD
-                                    </th>
-                                    <th>
-
-                                    </th>
-                                    <th class="tablehead">
-                                        CARD/CHECK INFORMATION
-                                    </th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="signupfont" style="min-width: 200px;">
-                                        <div class="form-group" style="margin-left: 0px;">
-                                            <div class="">
-                                                <label><input id="sig1" type="radio" value="CARD (DEBIT/CREDIT)" name="data[PackageCustomer][payment_type]">CARD (DEBIT/CREDIT)</label>
-                                            </div>
-                                            <div class="">
-                                                <label><input id="sig2" type="radio" value="PERSONAL CHECK" name="data[PackageCustomer][payment_type]">PERSONAL CHECK</label>
-                                            </div>
-                                            <div class="">
-                                                <label><input id="sig2" type="radio" value="CERTIFIED CHECK" name="data[PackageCustomer][payment_type]">CERTIFIED CHECK</label>
-                                            </div>
-                                            <div class="">
-                                                <label><input id="sig2" type="radio" value="MONEY ORDER" name="data[PackageCustomer][payment_type]">MONEY ORDER</label>
-                                            </div>
-
-                                        </div>
-
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-3">
-                                                <div class="form-group" style="margin-left: 0px;">
-
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="VISA" name="data[PackageCustomer][card_type]">VISA</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="MASTER Card" name="data[PackageCustomer][card_type]">MASTER Card </label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="MASTER Card" name="data[PackageCustomer][card_type]">BANK </label>
+                                                                                                            <input class="PSID" type="hidden" value="<?php echo $pid; ?>">
+                                                
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                    <?php endforeach; ?>
+                                                                        </div>
+                                                                    </div>
+                                
+                                
+                                
+                                
+                                                                    <div class="panel panel-default">
+                                                                        <div class="panel-heading">
+                                                                            <h4 class="panel-title">
+                                                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2" aria-expanded="false">
+                                                                                    NABC special package </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div id="collapse_2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                                            <div class="panel-body">
+                                
+                                
+                                
+                                
+                    <?php
+                    foreach ($packages_special as $package):
+                        echo $package['psettings']['offer'];
+                        $pid1 = $package['psettings']['id'];
+                        ?>
+                                                                                                    <input class="PSID" type="hidden" value="<?php echo $pid1; ?>">
+                                                
+                                                                                                </div>
+                                                                                            </div>
+                                                
+                    <?php endforeach; ?> 
+                                
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                
+                                                        </div> 
                                                     </div>
-                                                </div>     
+                                
+                                
+                                
+                                                </div>
+                    <?php
+                }
+                ?>
+                            End of package info -->
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet box"  style=" text-align: center; background-color: black;">
+                            <div class="portlet-title">
+                                <div class="caption" id="blackcaption" >
+                                    Package Information
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1" aria-expanded="false">
+                                            All Packages </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                    <div class="panel-body">
+
+                                        <div class="" style="">
+                                            <div class="tabbable tabbable-custom">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a data-toggle="tab" href="#full">Full Package</a></li>
+                                                    <li><a data-toggle="tab" href="#nabc">NABC Special Package</a></li>
+                                                    <li><a data-toggle="tab" href="#new_york">New York</a></li>
+                                                    <li><a data-toggle="tab" href="#new_jersey">New Jersey</a></li>
+                                                    <li><a data-toggle="tab" href="#michigan">Michigan</a></li>
+                                                    <li><a data-toggle="tab" href="#texas">Texas</a></li>
+                                                    <li><a data-toggle="tab" href="#canada">Canada</a></li>
+                                                    <li><a data-toggle="tab" href="#uk">UK</a></li>
+                                                    <li><a data-toggle="tab" href="#contemporary">Contemporary</a></li>
+                                                    <li><a data-toggle="tab" href="#custom">Custom</a></li>
+                                                </ul>
                                             </div>
 
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="full">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="30">
+                                                                <div id="fariff" class="pricing-head">
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>40<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$40</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="31">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$90</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="32"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$180</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="33">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$360</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                           
+                                                                    <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="nabc">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="34">
+                                                                <div id="fariff" class="pricing-head">
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>19<em>.99</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$19.99</strong></li> 
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="35">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>60<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$60</strong></li> 
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="36"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>120<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$120</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="37">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>240<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$240</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="new_york">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="38">
+                                                                <div id="fariff" class="pricing-head">
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>40<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$40</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="39">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$90</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="40"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$180</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="41">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$360</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                           
+                                                                    <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="new_jersey">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect">
+                                                                <div id="fariff" class="pricing-head" id="42">
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>40<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$40</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="43">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$90</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="44"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$180</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="45">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$360</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                           
+                                                                    <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="michigan">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="46">
+                                                                <div id="fariff" class="pricing-head">
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>30<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$30</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="47">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>75<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$75</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="48"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>150<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$150</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="49">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>300<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$300</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                           
+                                                                    <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="texas">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="50">
+                                                                <div id="fariff" class="pricing-head" >
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>30<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$30</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="51">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>90<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$90</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="52"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>180<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$180</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>1 Months addition or $40 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="53">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>360<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>$360</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>$50</strong></li>                                           
+                                                                    <li>Bonus: <strong>3 Months addition or $100 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="canada">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="54">
+                                                                <div id="fariff" class="pricing-head">
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>c$</em>25<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$25</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="55">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>c$</em>75<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$75</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="56"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>c$</em>150<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$150</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>1 Months addition or c$40 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="57">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>c$</em>300<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$300</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                           
+                                                                    <li>Bonus: <strong>3 Months addition or c$100 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="uk">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3 col-md-offset-4">
+                                                            <div class="pricing hover-effect" id="58">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>‎£</em>85<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>£85</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>£50</strong></li>                                           
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="contemporary">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="54">
+                                                                <div id="fariff" class="pricing-head">
+                                                                    <h3>1 Month <span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$25</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="55">
+                                                                <div class="pricing-head">
+                                                                    <h3>3 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$75</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>N/A</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="56"><!-- pricing-active  -->
+                                                                <div class="pricing-head"><!-- pricing-head-active -->
+                                                                    <h3>6 Month<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$150</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
+                                                                    <li>Bonus: <strong>1 Months addition or c$40 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="pricing hover-effect" id="57">
+                                                                <div class="pricing-head">
+                                                                    <h3>1 Year<span> Billing Package </span></h3>
+                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
+                                                                </div>
+                                                                <ul class="pricing-content list-unstyled">
+                                                                    <li>Bill (For 1st Box): <strong>c$300</strong></li>
+                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                           
+                                                                    <li>Bonus: <strong>3 Months addition or c$100 calling card</strong></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane" id="custom">
+                                                    <div class="panel-body">
+                                                        <div class="col-md-6 col-md-offset-3">
+                                                            <div class="pricing hover-effect" id="58">
+                                                                <div class="pricing-head">
+                                                                    <h3>Custom<span> Billing Package </span></h3>
+
+                                                                </div>
+                                                                <div style="padding: 10px;">
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-4 control-label">Duration</label>
+                                                                        <div class="col-md-8">
+                                                                            <?php
+                                                                            $arrCategory = array("1 Month" => "1 Month", "3 Month" => "3 Month", "6 Month" => "6 Month", "1 Year" => "1 Year");
+                                                                            echo $this->Form->input(
+                                                                                    'duration', array(
+                                                                                'class' => 'form-control',
+                                                                                'options' => $arrCategory,
+                                                                                'label' => false,
+                                                                                'empty' => '--Select one--',
+                                                                                    )
+                                                                            );
+                                                                            ?>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-4 control-label">Charged Amount</label>
+                                                                        <div class="col-md-8">
+                                                                            <?php
+                                                                            echo $this->Form->input(
+                                                                                    'charge', array(
+                                                                                'class' => 'form-control',
+                                                                                'type' => 'number'
+                                                                                    )
+                                                                            );
+                                                                            ?>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
 
 
+                                    </div>
+                                </div>
 
-                                        <div class="row">
-                                            <div class="col-md-3 signupfont">
-                                                Name: 
+                            </div>
+                        </div>
+
+                    </div> 
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet box"  style=" text-align: center; background-color: black;">
+                            <div class="portlet-title">
+                                <div class="caption" id="blackcaption" >
+                                    Payment
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 ">
+
+                        <div class="col-md-2">
+                            <span class="signupfont"> Security Deposit: </span>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-list style-4 clearfix">
+                                <div>
+                                    <?php
+                                    echo $this->Form->input(
+                                            'deposit', array(
+                                        'class' => 'required partial',
+                                        'type' => 'number'
+                                            )
+                                    );
+                                    ?> 
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="signupfont">Monthly Bill: </span>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="input-list style-4 clearfix">
+                                <div>
+                                    <?php
+                                    echo $this->Form->input(
+                                            'monthly_bill', array(
+                                        'class' => 'required partial',
+                                        'type' => 'number'
+                                            )
+                                    );
+                                    ?> 
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="signupfont">Others: </span>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="input-list style-4 clearfix">
+                                <div>
+                                    <?php
+                                    echo $this->Form->input(
+                                            'others', array(
+                                        'class' => 'partial',
+                                        'type' => 'number'
+                                            )
+                                    );
+                                    ?> 
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="col-md-1 signupfont">
+                            Total: 
+                        </div>
+                        <div class="col-md-2">
+                            <?php
+                            echo $this->Form->input(
+                                    'total', array(
+                                'class' => 'form-control input-sm total',
+                                'type' => 'text',
+                                'readonly' => 'readonly'
+                                    )
+                            );
+                            ?>
+                        </div>                                                                          
+                    </div>
+                </div>
+                &nbsp;
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="tablehead">
+                                            PAYMENT METHOD
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                        <th class="tablehead">
+                                            CARD/CHECK INFORMATION
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="signupfont" style="min-width: 200px;">
+                                            <div class="form-group" style="margin-left: 0px;">
+                                                <div class="">
+                                                    <label><input id="sig1" type="radio" value="CARD (DEBIT/CREDIT)" name="data[PackageCustomer][payment_type]">CARD (DEBIT/CREDIT)</label>
+                                                </div>
+                                                <div class="">
+                                                    <label><input id="sig2" type="radio" value="PERSONAL CHECK" name="data[PackageCustomer][payment_type]">PERSONAL CHECK</label>
+                                                </div>
+                                                <div class="">
+                                                    <label><input id="sig2" type="radio" value="CERTIFIED CHECK" name="data[PackageCustomer][payment_type]">CERTIFIED CHECK</label>
+                                                </div>
+                                                <div class="">
+                                                    <label><input id="sig2" type="radio" value="MONEY ORDER" name="data[PackageCustomer][payment_type]">MONEY ORDER</label>
+                                                </div>
+
                                             </div>
-                                            <div class="col-md-9">
-                                                <?php
-                                                echo $this->Form->input(
-                                                        'card_username', array(
-                                                    'type' => 'text',
-                                                    'class' => 'form-control input-sm required'
-                                                ));
-                                                ?>
+
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-8 col-md-offset-3">
+                                                    <div class="form-group" style="margin-left: 0px;">
+
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="VISA" name="data[PackageCustomer][card_type]">VISA</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="MASTER Card" name="data[PackageCustomer][card_type]">MASTER Card </label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="MASTER Card" name="data[PackageCustomer][card_type]">BANK </label>
+                                                        </div>
+                                                    </div>     
+
+                                                </div>
+
                                             </div>
 
-                                        </div>
 
-                                        &nbsp;
 
-                                        <div class="row">
-                                            <div class="col-md-3 signupfont" style="padding-right: 0px;">
-                                                Card/Check No: 
-                                            </div>
-                                            <div class="col-md-9">
-                                                <?php
-                                                echo $this->Form->input(
-                                                        'card_check_no', array(
-                                                    'type' => 'text',
-                                                    'class' => 'form-control input-sm required'
-                                                ));
-                                                ?>
-                                            </div>
-
-                                        </div>
-
-                                        &nbsp;
-
-                                        <div class="row">
-                                            <div class="col-md-3 signupfont">
-                                                Exp. Date:
-                                            </div>
-                                            <div class="col-md-9">
-                                                <div>
+                                            <div class="row">
+                                                <div class="col-md-3 signupfont">
+                                                    Name: 
+                                                </div>
+                                                <div class="col-md-9">
                                                     <?php
                                                     echo $this->Form->input(
-                                                            'exp_date', array(
-                                                        'type' => 'date',
+                                                            'card_username', array(
+                                                        'type' => 'text',
+                                                        'class' => 'form-control input-sm required'
                                                     ));
                                                     ?>
                                                 </div>
-                                                <!--   exp_date     -->
+
                                             </div>
 
-                                        </div>
+                                            &nbsp;
 
-                                        &nbsp;
-                                        <div class="row">
-                                            <div class="col-md-3 signupfont">
-                                                CVV Code: 
-                                            </div>
-                                            <div class="col-md-3">
-                                                <?php
-                                                echo $this->Form->input(
-                                                        'cvv_code', array(
-                                                    'type' => 'text',
-                                                    'class' => 'form-control input-sm required'
-                                                ));
-                                                ?>
-                                            </div>
-                                            <div class="col-md-3 signupfont">
-                                                Charged Amount: 
-                                            </div>
-                                            <div class="col-md-3">
-                                                <?php
-                                                echo $this->Form->input(
-                                                        'charge_amount', array(
-                                                    'class' => 'form-control input-sm total',
-                                                    'type' => 'text',
-                                                    
-                                                        )
-                                                );
-                                                ?>
-                                            </div>
-                                        </div>
-                                        &nbsp;
-                                        <div class="row">
-                                            <div class="col-md-3 signupfont">
-                                                Address on Card: 
-                                            </div>
-                                            <div class="col-md-9">
-                                                <?php
-                                                echo $this->Form->input(
-                                                        'address_on_card', array(
-                                                    'type' => 'text',
-                                                    'class' => 'form-control input-sm'
-                                                ));
-                                                ?>
-                                            </div>
-                                        </div>
-                                        &nbsp;
-                                        <div class="row">
-                                            <div class="col-md-10 col-md-offset-3">
-                                                <input type="checkbox" name="data[PackageCustomer][same_address]" value="YES" id="PostPublished" /> <span class="signupfont">SAME AS BILLING ADDRESS </span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                                            <div class="row">
+                                                <div class="col-md-3 signupfont" style="padding-right: 0px;">
+                                                    Card/Check No: 
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <?php
+                                                    echo $this->Form->input(
+                                                            'card_check_no', array(
+                                                        'type' => 'text',
+                                                        'class' => 'form-control input-sm required'
+                                                    ));
+                                                    ?>
+                                                </div>
 
-            <div class="row">
-                <div class="col-md-12 ">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet box"  style=" text-align: center; background-color: black;">
-                        <div class="portlet-title">
-                            <div class="caption" id="blackcaption" >
-                                EQUIPMENT
-                            </div>
+                                            </div>
 
+                                            &nbsp;
+
+                                            <div class="row">
+                                                <div class="col-md-3 signupfont">
+                                                    Exp. Date:
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div>
+                                                        <?php
+                                                        echo $this->Form->input(
+                                                                'exp_date', array(
+                                                            'type' => 'date',
+                                                        ));
+                                                        ?>
+                                                    </div>
+                                                    <!--   exp_date     -->
+                                                </div>
+
+                                            </div>
+
+                                            &nbsp;
+                                            <div class="row">
+                                                <div class="col-md-3 signupfont">
+                                                    CVV Code: 
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <?php
+                                                    echo $this->Form->input(
+                                                            'cvv_code', array(
+                                                        'type' => 'text',
+                                                        'class' => 'form-control input-sm required'
+                                                    ));
+                                                    ?>
+                                                </div>
+                                                <div class="col-md-3 signupfont">
+                                                    Charged Amount: 
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <?php
+                                                    echo $this->Form->input(
+                                                            'charge_amount', array(
+                                                        'class' => 'form-control input-sm total',
+                                                        'type' => 'text',
+                                                            )
+                                                    );
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            &nbsp;
+                                            <div class="row">
+                                                <div class="col-md-3 signupfont">
+                                                    Address on Card: 
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <?php
+                                                    echo $this->Form->input(
+                                                            'address_on_card', array(
+                                                        'type' => 'text',
+                                                        'class' => 'form-control input-sm'
+                                                    ));
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            &nbsp;
+                                            <div class="row">
+                                                <div class="col-md-10 col-md-offset-3">
+                                                    <input type="checkbox" name="data[PackageCustomer][same_address]" value="YES" id="PostPublished" /> <span class="signupfont">SAME AS BILLING ADDRESS </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-            <div class="col-md-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="tablehead">
-                                        EQUIPMENT
-                                    </th>
-                                    
-                                    <th class="tablehead">
-                                        DESCRIPTION
-                                    </th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">SITE TOP BOX</span>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="1 BOX" name="data[PackageCustomer][equipment_top_box]">1 BOX</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="2 BOX" name="data[PackageCustomer][equipment_top_box]">2 BOX</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 BOX" name="data[PackageCustomer][equipment_top_box]">3 BOX</label>
-                                                    </div>
-                                                </div>     
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                       <span class="signupfont">HDMI</span> 
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_hdmi]">YES</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_hdmi]">NO</label>                                                       
-                                                    </div>
-                                                </div>     
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                       <span class="signupfont">AV CABLE</span> 
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_av_cable]">YES</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_av_cable]">NO</label>                                                       
-                                                    </div>
-                                                </div>     
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">ETHERNET</span>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_ethernet]">YES</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_ethernet]">NO</label>                                                       
-                                                    </div>
-                                                </div>     
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">REMOTE</span>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_remote]">YES</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_remote]">NO</label>                                                       
-                                                    </div>
-                                                </div>     
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                       <span class="signupfont">POWER ADAPTER</span> 
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_adapter]">YES</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_adapter]">NO</label>                                                       
-                                                    </div>
-                                                </div>     
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">OTHER</span>
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-            </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 ">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet box"  style=" text-align: center; background-color: black;">
-                        <div class="portlet-title">
-                            <div class="caption" id="blackcaption" >
-                                WARRANTY
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet box"  style=" text-align: center; background-color: black;">
+                            <div class="portlet-title">
+                                <div class="caption" id="blackcaption" >
+                                    EQUIPMENT
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-             <div class="row">
-            <div class="col-md-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="tablehead">
-                                        EQUIPMENT
-                                    </th>
-                                    
-                                    <th class="tablehead">
-                                        DESCRIPTION
-                                    </th>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="tablehead">
+                                            EQUIPMENT
+                                        </th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">SITE TOP BOX</span>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class=" text-center"><span class="signupfont">N/A</span></div>     
+                                        <th class="tablehead">
+                                            DESCRIPTION
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">SITE TOP BOX</span>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="1 BOX" name="data[PackageCustomer][equipment_top_box]">1 BOX</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="2 BOX" name="data[PackageCustomer][equipment_top_box]">2 BOX</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 BOX" name="data[PackageCustomer][equipment_top_box]">3 BOX</label>
+                                                        </div>
+                                                    </div>     
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                       <span class="signupfont">HDMI/AV CABLE</span> 
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_hdmi_av]">3 MONTH</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_hdmi_av]">6 MONTH</label>                                                       
-                                                    </div>
-                                                </div>     
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">HDMI</span> 
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_hdmi]">YES</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_hdmi]">NO</label>                                                       
+                                                        </div>
+                                                    </div>     
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">POWER ADAPTER</span>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_adapter]">3 MONTH</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_adapter]">6 MONTH</label>                                                       
-                                                    </div>
-                                                </div>     
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">AV CABLE</span> 
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_av_cable]">YES</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_av_cable]">NO</label>                                                       
+                                                        </div>
+                                                    </div>     
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">REMOTE</span>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center" style="margin-left: 0px;">
-                                                    <div class="radio-list">
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_remote]">3 MONTH</label>
-                                                        <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_remote]">6 MONTH</label>
-                                                </div>     
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">ETHERNET</span>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_ethernet]">YES</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_ethernet]">NO</label>                                                       
+                                                        </div>
+                                                    </div>     
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="signupfont">ROUTER/DONGLE</span>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-center"><span class="signupfont">NO WARRANTY</span></div>     
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">REMOTE</span>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_remote]">YES</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_remote]">NO</label>                                                       
+                                                        </div>
+                                                    </div>     
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">POWER ADAPTER</span> 
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="YES" name="data[PackageCustomer][equipment_adapter]">YES</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="NO" name="data[PackageCustomer][equipment_adapter]">NO</label>                                                       
+                                                        </div>
+                                                    </div>     
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">OTHER</span>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-            </div>
-            </div>
-
-            <!-- BEGIN BUTTONS PORTLET-->
-
-
-
-            &nbsp; &nbsp; &nbsp;
-            <div class="row">
-                <div class="col-md-12 col-sm-12" style="text-align: justify;">  
-
-                    <div class="checkbox-list">
-                        <label class="checkbox-inline" >
-                            I understand that it will be billed $______for______month for cable TV voice online service. This bill payable by the 7th day of the every month. Total cable has the right to discontinue my cable service and asses additional @5/10/15 service charge for reconnecting service due to late or non-payment of bills. Total Cable has the right to discontinue service or change/remove contents offered as required by law or otherwise without prior notice. 
-                        </label>
-
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet box"  style=" text-align: center; background-color: black;">
+                            <div class="portlet-title">
+                                <div class="caption" id="blackcaption" >
+                                    WARRANTY
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    &nbsp;
-                    
-                    <div class="">
-                        <label  class="signupfont" for="exampleInputFile1">Card Holder's Signature:</label>&nbsp;
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="tablehead">
+                                            EQUIPMENT
+                                        </th>
+
+                                        <th class="tablehead">
+                                            DESCRIPTION
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">SITE TOP BOX</span>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class=" text-center"><span class="signupfont">N/A</span></div>     
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">HDMI/AV CABLE</span> 
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_hdmi_av]">3 MONTH</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_hdmi_av]">6 MONTH</label>                                                       
+                                                        </div>
+                                                    </div>     
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">POWER ADAPTER</span>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_adapter]">3 MONTH</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_adapter]">6 MONTH</label>                                                       
+                                                        </div>
+                                                    </div>     
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">REMOTE</span>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center" style="margin-left: 0px;">
+                                                        <div class="radio-list">
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_remote]">3 MONTH</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_remote]">6 MONTH</label>
+                                                        </div>     
+                                                    </div>
+                                                </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="signupfont">ROUTER/DONGLE</span>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-center"><span class="signupfont">NO WARRANTY</span></div>     
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEGIN BUTTONS PORTLET-->
+
+
+
+                &nbsp; &nbsp; &nbsp;
+                <div class="row">
+                    <div class="col-md-12 col-sm-12" style="text-align: justify;">  
+
+                        <div class="checkbox-list">
+                            <label class="checkbox-inline" >
+                                I understand that it will be billed $______for______month for cable TV voice online service. This bill payable by the 7th day of the every month. Total cable has the right to discontinue my cable service and asses additional @5/10/15 service charge for reconnecting service due to late or non-payment of bills. Total Cable has the right to discontinue service or change/remove contents offered as required by law or otherwise without prior notice. 
+                            </label>
+
+                        </div>
+                        &nbsp;
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label  class="signupfont" for="exampleInputFile1">Card Holder's Signature:</label>&nbsp;
 
                                                 <!--<input type="file" name="data[PackageCustomer][ch_signature]" id="required">-->  
-                        <?php
-                        echo $this->Form->input(
-                                'ch_signature', array(
-                            'type' => 'file',
-                            
-                            'id' => 'cardsig'
-                                )
-                        );
-                        ?>
+                                <?php
+                                echo $this->Form->input(
+                                        'ch_signature', array(
+                                    'type' => 'file',
+                                    'id' => 'cardsig'
+                                        )
+                                );
+                                ?>
+                            </div>
+                            <div class="col-md-3">
+                                <label  class="signupfont" for="exampleInputFile1">Card Holder's ID Card:</label>&nbsp;
+
+                                                <!--<input type="file" name="data[PackageCustomer][ch_signature]" id="required">-->  
+                                <?php
+                                echo $this->Form->input(
+                                        'id_card', array(
+                                    'type' => 'file',
+                                    'id' => 'cardsig'
+                                        )
+                                );
+                                ?>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-list">
+                            <label class="checkbox-inline require" >
+
+                                <?php
+                                echo $this->Form->input(
+                                        'agreement', array(
+                                    'type' => 'checkbox',
+                                    'id' => 'agree'
+                                ));
+                                ?> 
+
+                                By signing below I agree to the<a href="<?php echo Router::url(array('action' => 'terms_and_conditions')) ?>"><span class="text-primary"> terms and conditions </span></a> on other side of the page.
+
+                            </label>
+
+                        </div>
+
                     </div>
-
-                    <div class="checkbox-list">
-                        <label class="checkbox-inline require" >
-
-                            <?php
-                            echo $this->Form->input(
-                                    'agreement', array(
-                                'type' => 'checkbox',
-                                        'id' => 'agree'
-                            ));
-                            ?> 
-
-                            By signing below I agree to the<a href="<?php echo Router::url(array('action' => 'terms_and_conditions')) ?>"><span class="text-primary"> terms and conditions </span></a> on other side of the page.
-
-                        </label>
-
-                    </div>
-
                 </div>
+
+                &nbsp;
+
+
+                <?php
+                echo $this->Form->input(
+                        'psetting_id', array(
+                    'id' => 'packageid',
+                    'type' => 'hidden',
+                        )
+                );
+                ?>
+
+
+
+                &nbsp;
+
+                &nbsp;
+
+                <div class="row">
+                    <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20"> 
+
+                        <?php
+                        echo $this->Form->button(
+                                'Sign up', array(
+                            'class' => 'btn btn-primary submitbtn',
+                            'type' => 'submit',
+                            'id' => 'signup'
+                        ));
+                        ?>
+
+                    </div>
+                </div> 
             </div>
 
-            &nbsp;
+            <?php echo $this->Form->end(); ?>
 
-
-            <?php
-            echo $this->Form->input(
-                    'psetting_id', array(
-                'id' => 'packageid',
-                'type' => 'hidden',
-                        
-                    )
-            );
-            ?>
-
-
-
-            &nbsp;
-
-            &nbsp;
-
-            <div class="row">
-                <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20"> 
-
-                    <?php
-                    echo $this->Form->button(
-                            'Sign up', array(
-                        'class' => 'btn btn-primary submitbtn',
-                        'type' => 'submit',
-                        'id' => 'signup'
-                    ));
-                    ?>
-
-                </div>
-            </div> 
         </div>
-
-        <?php echo $this->Form->end(); ?>
-
     </div>
-</div>
 </div>
 

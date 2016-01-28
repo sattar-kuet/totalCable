@@ -65,6 +65,7 @@ class AppController extends Controller {
             }
             $admin_sidebar = $admin['Role']['name'];
         }
+        $this->loadTechnecian();
         $this->set(compact('admin_sidebar', 'admin_title', 'admin_loggedIn', 'isSadmin'));
     }
 
@@ -108,6 +109,19 @@ class AppController extends Controller {
         } else {
             $this->Session->setFlash('Simple email not sent');
         }
+    }
+    
+     function loadTechnecian() {
+        $this->loadModel('User');
+        $sql = "SELECT r.id, u.*, r.name
+            FROM users u
+            INNER JOIN roles r ON u.role_id = r.id
+            WHERE r.name =  'technician'
+          ";
+        $technician = $this->User->query($sql);
+//        pr($technician);
+//        exit;
+        $this->set(compact('technician'));
     }
 
 }

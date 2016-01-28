@@ -140,6 +140,8 @@ li {
 }
 .login .content {
     margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 .input-icon > .form-control {
   padding-left: 10px;
@@ -279,6 +281,14 @@ input[type="email"]:focus {
 }
 
 
+/*. User signup package information .*/
+.pricing.hover-effect {
+    cursor: pointer;
+}
+.pricing-content li {
+    padding: 0px 15px;
+}
+
  /*end Sakib*/
 /*Custom css by Lemon*/
  .login .logo {
@@ -289,7 +299,7 @@ input[type="email"]:focus {
 
 .login .reseller {
   
-     width: 610px;
+     //width: 610px;
   
 }
 
