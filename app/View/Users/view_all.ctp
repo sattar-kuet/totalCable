@@ -54,6 +54,7 @@
                                     <th>Registration Date</th>
                                     <th>Installed by</th>
                                     <th>Detail</th>
+                                    <th>Edit</th>
                                     
                                 </tr>
                             </thead>
@@ -84,6 +85,16 @@
 
                                         <a  href="<?php echo Router::url(array('controller'=>'users','action'=>'view_pdf_format',$put['id'])
                                                 )?>" target="_blank" class="tip"><span class="icomoon-icon-file-pdf" title="View Detail"></span></a>
+
+
+                                            </div>
+                                        </td>
+                                        <td>   
+                                            <div class="controls center">
+                                                
+
+                                        <a  href="<?php echo Router::url(array('controller'=>'Frontends','action'=>'edit_service_order',$put['id'])
+                                                )?>" target="_blank" class="tip"><span class="icon12  icomoon-icon-pencil-4" title="View Detail"></span></a>
 
 
                                             </div>

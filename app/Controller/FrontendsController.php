@@ -817,6 +817,29 @@ Thank you,</br>
             return $this->redirect($this->referer());
         }
     }
+    
+    function edit_service_order($id = null) {
+        $this->layout = 'public-without-slider';
+        
+        $this->loadModel('PackageCustomer');
+        $this->loadModel('CustomPackage');
+        $customer_info = $this->PackageCustomer->findById($id);
+        
+        if ($this->request->is('post') || $this->request->is('put')) {
+            //pr($customer_info['PackageCustomer']['id']); exit;
+            
+            $this->PackageCustomer->id = $customer_info['PackageCustomer']['id'];            
+            $this->PackageCustomer->save($this->request->data['PackageCustomer']);
+            $msg = '<div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong> Customer information updated successfully </strong>
+            </div>';
+            $this->Session->setFlash($msg);
+            //return $this->redirect('manage_user');
+        } else {
+            $this->request->data = $customer_info;
+        }
+    }
 
 }
 ?>

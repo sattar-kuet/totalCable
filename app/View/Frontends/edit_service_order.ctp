@@ -1609,66 +1609,7 @@
 
 
                 &nbsp; &nbsp; &nbsp;
-                <div class="row">
-                    <div class="col-md-12 col-sm-12" style="text-align: justify;">  
-
-                        <div class="checkbox-list">
-                            <label class="checkbox-inline" >
-                                I understand that it will be billed $______for______month for cable TV voice online service. This bill payable by the 7th day of the every month. Total cable has the right to discontinue my cable service and asses additional @5/10/15 service charge for reconnecting service due to late or non-payment of bills. Total Cable has the right to discontinue service or change/remove contents offered as required by law or otherwise without prior notice. 
-                            </label>
-
-                        </div>
-                        &nbsp;
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label  class="signupfont" for="exampleInputFile1">Card Holder's Signature:</label>&nbsp;
-
-                                                <!--<input type="file" name="data[PackageCustomer][ch_signature]" id="required">-->  
-                                <?php
-                                echo $this->Form->input(
-                                        'ch_signature', array(
-                                    'type' => 'file',
-                                    'id' => 'cardsig'
-                                        )
-                                );
-                                ?>
-                            </div>
-                            <div class="col-md-3">
-                                <label  class="signupfont" for="exampleInputFile1">Card Holder's ID Card:</label>&nbsp;
-
-                                                <!--<input type="file" name="data[PackageCustomer][ch_signature]" id="required">-->  
-                                <?php
-                                echo $this->Form->input(
-                                        'id_card', array(
-                                    'type' => 'file',
-                                    'id' => 'cardsig'
-                                        )
-                                );
-                                ?>
-                            </div>
-                        </div>
-
-                        <div class="checkbox-list">
-                            <label class="checkbox-inline require" >
-
-                                <?php
-                                echo $this->Form->input(
-                                        'agreement', array(
-                                    'type' => 'checkbox',
-                                    'id' => 'agree'
-                                ));
-                                ?> 
-
-                                By signing below I agree to the<a href="<?php echo Router::url(array('action' => 'terms_and_conditions')) ?>"><span class="text-primary"> terms and conditions </span></a> on other side of the page.
-
-                            </label>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                &nbsp;
+               
 
 
                 <?php
@@ -1691,10 +1632,10 @@
 
                         <?php
                         echo $this->Form->button(
-                                'Sign up', array(
+                                'Done', array(
                             'class' => 'btn btn-primary submitbtn',
                             'type' => 'submit',
-                            'id' => 'signup'
+                            
                         ));
                         ?>
 
@@ -1707,4 +1648,6 @@
         </div>
     </div>
 </div>
+
+
 
