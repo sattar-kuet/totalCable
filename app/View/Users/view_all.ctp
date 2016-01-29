@@ -49,6 +49,7 @@
                         <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" width="100%">
                             <thead>
                                 <tr>
+                                    <th>Phone no</th>
                                     <th>Email</th>
                                     <th>Customer Name</th>
                                     <th>Registration Date</th>
@@ -68,7 +69,7 @@
                                     ?>
                                 
                                     <tr class="odd gradeX">
-
+                                        <td><?php echo $put['home']; ?></td>
                                         <td><?php echo $put['email']; ?></td>
                                         <td><?php echo $put['first_name']; echo ' '; echo $put['middle_name']; echo ' '; echo $put['last_name']; ?></td>
                                         <td><?php
