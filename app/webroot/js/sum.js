@@ -14,18 +14,19 @@ $(document).on("change", ".partial", function() {
     $(".total").val(sum);
 });
 
-$(document).ready(function() {
-    $("div.sss").hide();
-   // $("#cardsig").remove(".required");
-    $("input[id*='sig2']").click(function() {        
-        $("div.sss").show(200); 
-        $(":file").addClass("required");
-    });    
-    $("input[id*='sig1']").click(function() {        
-        $("div.sss").hide(200);  
-        $(":file").removeClass("required");
-    });
-});
+// Signature needed if selected other than Card(debit/credit)
+//$(document).ready(function() {
+//    $("div.sss").hide();
+//   // $("#cardsig").remove(".required");
+//    $("input[id*='sig2']").click(function() {        
+//        $("div.sss").show(200); 
+//        $(":file").addClass("required");
+//    });    
+//    $("input[id*='sig1']").click(function() {        
+//        $("div.sss").hide(200);  
+//        $(":file").removeClass("required");
+//    });
+//});
 
 
 $(document).ready(function(){
