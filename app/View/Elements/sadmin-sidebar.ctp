@@ -132,7 +132,10 @@
                             </li> 
                             <li>
                                 <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'psetting')) ?>"><span class="icon16 icomoon-icon-arrow-right-2"></span>Package Settings</a>
-                            </li> 
+                            </li>
+                            <li>
+                                <a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'manage_package')) ?>"><span class="icon16 icomoon-icon-arrow-right-2"></span>Manage Package</a>
+                            </li>
                         </ul> 
                     </li>
 

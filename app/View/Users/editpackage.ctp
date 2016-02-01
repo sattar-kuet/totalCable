@@ -113,7 +113,7 @@
                                         <div class="span9 controls">
                                             <?php
                                             echo $this->Form->button(
-                                                    'Add', array('class' => 'btn btn-success', 'type' => 'submit')
+                                                    'Done', array('class' => 'btn btn-success', 'type' => 'submit')
                                             );
                                             ?>
 
