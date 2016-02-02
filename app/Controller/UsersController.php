@@ -476,7 +476,6 @@ class UsersController extends AppController {
     function package() {
         $this->loadModel('Package');
         if ($this->request->is('post')) {
-            
             $this->Package->set($this->request->data);
             if ($this->Package->validates()) {
                 $this->Package->save($this->request->data['Package']);
@@ -497,7 +496,7 @@ class UsersController extends AppController {
         $this->loadModel('Package');
 
         if ($this->request->is('post')) {
-            //pr($this->request->data);
+            pr($this->request->data);
             $this->Package->id = $this->request->data['Package']['id'];
             $this->Package->save($this->request->data['Package']);
             $msg = '<div class="alert alert-success">
@@ -511,49 +510,26 @@ class UsersController extends AppController {
         $this->set('packages', $this->Package->find("list"));
     }
 
-    function psetting($id = null) {
+    function psetting() {
         $this->layout = "news";
         $this->loadModel('Package');
 
-        $this->set('package', $this->Package->find("list"));
+        $this->set('packages', $this->Package->find("list"));
         $this->loadModel('Psetting');
-    
-        if ($this->request->is('post')|| $this->request->is('put')) {
-           // pr($this->request->data['Psetting']); exit;
-            $this->Psetting->id = $id;
-           // pr($this->request->data); exit;
+
+        if ($this->request->is('post')) {
+
+
             $this->Psetting->save($this->request->data['Psetting']);
             $msg = '<div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong> Psetting insert succeesfully </strong>
             </div>';
             $this->Session->setFlash($msg);
-            return $this->redirect($this->referer());
-        }
-        else {
-            $psetting_info = $this->Psetting->findById($id);
-            $this->request->data = $psetting_info;
+            return $this->redirect('psetting');
         }
     }
-    
-    function manage_package() {
-        $this->loadModel('Package');
-        $this->loadModel('Psetting');
-        $package_info = $this->Psetting->find('all');
-        $this->set(compact('package_info'));
-    }
-    function delete_package($id = null) {
-        $this->loadModel('Psetting');
-        $this->Psetting->id = $id;
-        $this->Psetting->delete($this->request->data('Psetting.id'));
-        $msg = '<div class="alert alert-success">
- <button type="button" class="close" data-dismiss="alert">&times;</button>
- <strong> This package is deleted succeesfully </strong>
-</div>';
-        $this->Session->setFlash($msg);
-        return $this->redirect('manage_package');
-    }
-               
+
     function insertcountry() {
         $this->loadModel('Country');
         if ($this->request->is('post')) {
@@ -807,8 +783,6 @@ class UsersController extends AppController {
         $customer_info = $this->PackageCustomer->find('all');          
         $this->set(compact('customer_info','filled_by'));
     }
-    
-    
 
 }
 

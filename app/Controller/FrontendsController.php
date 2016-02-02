@@ -606,7 +606,7 @@ class FrontendsController extends AppController {
                     'sattar.kuet@gmail.com',
                     'mamun.totaltvs@gmail.com',
                     'suman.totaltvs@gmail.com',
-                    'sarwar.totaltvs@gmail.com',
+                    'sawon.totaltvs@gmail.com',
                     'saadman.totaltvs@gmail.com',
                     'rehab.totaltvs@gmail.com');
 
@@ -706,7 +706,7 @@ Thank you,</br>
                     'sattar.kuet@gmail.com',
                     'mamun.totaltvs@gmail.com',
                     'suman.totaltvs@gmail.com',
-                    'sarwar.totaltvs@gmail.com',
+                    'sawon.totaltvs@gmail.com',
                     'saadman.totaltvs@gmail.com',
                     'rehab.totaltvs@gmail.com');
 
