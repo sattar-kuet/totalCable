@@ -132,7 +132,7 @@ class UsersController extends AppController {
             $admin = $this->Auth->user();
             $role = $admin['Role']['name'];
             if ($role == "technician") {
-                return $this->redirect('/packagesignup');
+                return $this->redirect('/service_order_form_new');
             }
             return $this->redirect($this->Auth->redirectUrl()); //(array('action' => 'deshboard'));
         }
@@ -147,7 +147,7 @@ class UsersController extends AppController {
 
                     if ($role == "technician") {
                         echo 'true';
-                        return $this->redirect('/packagesignup');
+                        return $this->redirect('/service_order_form_new');
                     }
 
                     return $this->redirect($this->Auth->redirectUrl());

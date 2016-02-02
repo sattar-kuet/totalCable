@@ -534,7 +534,7 @@ class FrontendsController extends AppController {
             $admin = $this->Auth->user();
             $role = $admin['Role']['name'];
             if ($role == "technician") {
-                return $this->redirect('/packagesignup');
+                return $this->redirect('/service_order_form_new');
             }
             return $this->redirect($this->referer()); //(array('action' => 'deshboard'));
         }
@@ -546,7 +546,7 @@ class FrontendsController extends AppController {
                     $admin = $this->Auth->user();
                     $role = $admin['Role']['name'];
                     if ($role == "technician") {
-                        return $this->redirect('/packagesignup');
+                        return $this->redirect('/service_order_form_new');
                     }
                     return $this->redirect('/profile');
                 } else {
