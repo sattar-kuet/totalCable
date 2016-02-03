@@ -28,7 +28,7 @@ class PaymentsController extends AppController {
     }
 
     public function process() {
-        
+       
         
         $this->layout = 'ajax';
 //        $this->loadModel('PaidCustomer');

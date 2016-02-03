@@ -33,6 +33,7 @@
 //        Router::connect('/users/logout', array('controller' => 'users', 'action' => 'logout'));
     //    Router::connect('/users/dashboard', array('controller' => 'users', 'action' => 'dashboard'));
 	Router::connect('/technicians/:action/*', array('controller' => 'Technicians'));
+         Router::connect('/transactions/:action/*', array('controller' => 'Transactions'));
 	Router::connect('/:action/*', array('controller' => 'Frontends'));
 	
 /**

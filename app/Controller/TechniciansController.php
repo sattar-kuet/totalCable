@@ -42,7 +42,6 @@ class TechniciansController extends AppController {
         return true;
     }
 
-
     function registered($id = null) {
 //        $this->loadModel('PackageCustomer');
 //        $sql = "SELECT pc.id, u.name, user_id, psetting_id, vp.name,charge_amount, CONCAT( first_name,  '', middle_name,  '', last_name ) AS name,

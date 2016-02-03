@@ -50,9 +50,20 @@ echo $this->Html->script(
             'datatable',
             'form-validation',
             'dashboard',
+            
+            // datepicker range
+            
+            '/jquery-ui-daterangepicker-0.4.3/jquery-ui',
+            '/jquery-ui-daterangepicker-0.4.3/moment.min',
+            '/jquery-ui-daterangepicker-0.4.3/jquery.comiseo.daterangepicker',
         )
 );
 ?>
+
+<script>
+    $(function() { $("#e1").daterangepicker(); });
+</script>
+
 <!-- TinyMCE -->
 
 <!-- Fix plugins -->

@@ -171,6 +171,21 @@
 
                     </li>
 
+                    <li>
+                        <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Transaction</a>
+                        <ul class="sub">                                         
+                            <li>
+
+                                <a  href="<?php echo Router::url(array('controller' => 'transactions', 'action' => 'search')) ?>"><span class="icon16 icomoon-icon-arrow-right-2">History</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Router::url(array('controller' => 'transactions', 'action' => 'expire_customer')) ?>"><span class="icon16 icomoon-icon-arrow-right-2">Expire Customer</a>
+
+                            </li>
+                        </ul> 
+
+                    </li>
+
                 </ul>
             </div>
         </div><!-- End sidenav -->
