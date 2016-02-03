@@ -743,7 +743,40 @@ Thank you,</br>
     }
 
     function tariffplan() {
+        $this->loadModel('Psetting');
+        $this->loadModel('Package');
+        $sql = "SELECT *  FROM packages
+                LEFT JOIN psettings ON packages.id=psettings.package_id ORDER BY packages.id ASC";
+        $info = $this->Package->query($sql);
         
+        $filteredPackage = array();
+        $unique = array();
+        $index = 0;
+        foreach ($info as $key => $menu) {
+            //pr($menu); exit;
+            $pm = $menu['packages']['name'];
+            
+            if (isset($unique[$pm])) {
+                //  echo 'already exist'.$key.'<br/>';
+                if (!empty($menu['psettings']['duration'])) {
+                    $temp = array('duration' => $menu['psettings']['duration'], 'amount' => $menu['psettings']['amount'], 'offer' => $menu['psettings']['offer']);
+                    //pr($temp); exit;
+                    $filteredPackage[$index]['psettings'][] = $temp;
+                }
+            } else {
+                if ($key != 0)
+                    $index++;
+                $unique[$pm] = 'set';
+                $temp = array('name' => $pm, 'id' => $menu['packages']['id']);
+                $filteredPackage[$index]['packages'] = $temp;
+                if (!empty($menu['psettings']['duration'])) {
+                    $temp = array('duration' => $menu['psettings']['duration'], 'amount' => $menu['psettings']['amount'], 'offer' => $menu['psettings']['offer']);
+                    $filteredPackage[$index]['psettings'][] = $temp;
+                }
+            }
+        }
+         //pr($filteredPackage);exit;
+        $this->set(compact('filteredPackage'));
     }
 
     function service_order_form_new($package_id = null) {
