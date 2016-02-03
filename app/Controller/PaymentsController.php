@@ -28,6 +28,8 @@ class PaymentsController extends AppController {
     }
 
     public function process() {
+        
+        
         $this->layout = 'ajax';
 //        $this->loadModel('PaidCustomer');
 //        $sql = "SELECT name, transactionkey ,card_no, exp_date FROM paid_customers ";
