@@ -759,7 +759,7 @@ Thank you,</br>
             if (isset($unique[$pm])) {
                 //  echo 'already exist'.$key.'<br/>';
                 if (!empty($menu['psettings']['duration'])) {
-                    $temp = array('duration' => $menu['psettings']['duration'], 'amount' => $menu['psettings']['amount'], 'offer' => $menu['psettings']['offer']);
+                    $temp = array('id' => $menu['psettings']['id'], 'duration' => $menu['psettings']['duration'], 'amount' => $menu['psettings']['amount'], 'offer' => $menu['psettings']['offer']);
                     //pr($temp); exit;
                     $filteredPackage[$index]['psettings'][] = $temp;
                 }
@@ -770,12 +770,12 @@ Thank you,</br>
                 $temp = array('name' => $pm, 'id' => $menu['packages']['id']);
                 $filteredPackage[$index]['packages'] = $temp;
                 if (!empty($menu['psettings']['duration'])) {
-                    $temp = array('duration' => $menu['psettings']['duration'], 'amount' => $menu['psettings']['amount'], 'offer' => $menu['psettings']['offer']);
+                    $temp = array('id' => $menu['psettings']['id'], 'duration' => $menu['psettings']['duration'], 'amount' => $menu['psettings']['amount'], 'offer' => $menu['psettings']['offer']);
                     $filteredPackage[$index]['psettings'][] = $temp;
                 }
             }
         }
-         //pr($filteredPackage);exit;
+        // pr($filteredPackage);exit;
         $this->set(compact('filteredPackage'));
     }
 
@@ -786,7 +786,9 @@ Thank you,</br>
         //$this->loadModel('Role');
         //  $role = $this->Role->findByName('customer');
         $this->layout = 'public-without-slider';
-
+        
+        $this->tariffplan(); //Call tarrifplan fuction to show packagese
+        
         if ($this->request->is('post')) {
             $this->PackageCustomer->set($this->request->data);
             $this->CustomPackage->set($this->request->data);

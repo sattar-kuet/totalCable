@@ -31,18 +31,19 @@ $(document).on("change", ".partial", function() {
 
 $(document).ready(function(){
     $('.hover-effect').click(function() {
-      $('.hover-effect').css({"border": "3px solid #eee", "font-size": "100%"});  
+    $('.hover-effect').css({"border": "3px solid #eee", "font-size": "100%"});  
     $(this).css({"border": "3px solid gray", "font-size": "200%"});
    
-   // var pkid = jQuery(this).find('.PSID').val();
-    
+   //var pkid = jQuery(this).find('#psetid').val();
     
     
    // $("#packageid").val(pkid);
    
      //alert($(this).attr('id'));
-     var ps_id = $(this).attr('id');
-      $("#packageid").val(ps_id);  
+    var ps_id = $(this).attr('id');
+     //alert(ps_id);
+    $("#packageid").val(ps_id); 
+      
 });
 });
     
