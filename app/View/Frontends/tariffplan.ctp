@@ -60,12 +60,14 @@
                             <?php
                             foreach ($filteredPackage as $n => $single):
                                 $tab = $single['packages'];
+                                $content = $single['psettings'];
+                                //pr($tab);exit;
                                 ?>
                                 <li <?php
                                 if (!$n) {
                                     echo 'class="active"';
                                 }
-                                ?>><a data-toggle="tab" href="#<?php echo $tab['id']; ?>"><?php echo $tab['name']; ?></a>
+                                ?>><a data-toggle="tab" href="#<?php echo $tab['id']; ?>"><?php if(strtolower(trim($tab['name'])) != "complementary"){echo $tab['name'];}  ?></a>
 
                                 <?php endforeach; ?>
                         </ul>
