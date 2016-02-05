@@ -52,9 +52,9 @@
                         <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Package Type</th>
-                                    <th>Duration</th>                                   
-                                    <th>Total Charge</th>                                                                      
+                                    <th>Package Name</th>
+                                    <th>Duration (Month)</th>                                   
+                                    <th>Total Charge($)</th>                                                                      
                                     <th>Action</th>
                                 </tr>
                             </thead>
