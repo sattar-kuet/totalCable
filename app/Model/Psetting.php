@@ -1,11 +1,10 @@
-
 <?php
 /**
 * 
 */
 class Psetting extends AppModel
 {
-	var $name = "psetting";
+	var $name = "psettings";
 	var $belongsTo = array('Package');
 	
 }

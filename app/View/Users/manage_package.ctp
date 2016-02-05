@@ -59,11 +59,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                foreach ($package_info as $single):
-                                    
+                                <?php                                
+                               foreach ($package_info as $single):                                 
                                $psetting = $single['Psetting'];     
                                $package_detail = $single['Package'];
+                              //pr($single); exit;  
                                     ?>
                                     <tr class="odd gradeX">
                                         <td><?php echo $package_detail['name']; ?></td>
