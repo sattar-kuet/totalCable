@@ -514,7 +514,6 @@
                                                         ?>><a data-toggle="tab" href="#<?php echo $tab['id']; ?>"><?php echo $tab['name']; ?></a>
 
                                                         <?php endforeach; ?>
-                                                    <li><a data-toggle="tab" href="#contemporary">Complementary</a></li>
                                                     <li><a data-toggle="tab" href="#custom">Custom</a></li>
                                                 </ul>
                                             </div>
@@ -534,7 +533,7 @@
                                                         <div class="panel-body">
                                                             <?php foreach ($content as $package): ?>
                                                                 <div class="col-md-3">
-                                                                    <div class="pricing hover-effect" id="<?php echo $package['id']; ?>">
+                                                                    <div class="pricing hover-effect">
                                                                         <div id="fariff" class="pricing-head">
                                                                             <h3><?php
                                                                                 echo ($package['duration'] == 12) ? '1 Year' : $package['duration'] . ' Month';
@@ -568,67 +567,7 @@
                                                 endforeach;
                                                 ?>
 
-                                                <div class="tab-pane" id="contemporary">
-                                                    <div class="panel-body">
-                                                        <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="59">
-                                                                <div id="fariff" class="pricing-head">
-                                                                    <h3>1 Month <span> Billing Package </span></h3>
-                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
-                                                                </div>
-                                                                <ul class="pricing-content list-unstyled">
-                                                                    <li>Bill (For 1st Box): <strong>c$25</strong></li>
-                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
-                                                                    <li>Bonus: <strong>N/A</strong></li>
-                                                                </ul>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="60">
-                                                                <div class="pricing-head">
-                                                                    <h3>3 Month<span> Billing Package </span></h3>
-                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
-                                                                </div>
-                                                                <ul class="pricing-content list-unstyled">
-                                                                    <li>Bill (For 1st Box): <strong>c$75</strong></li>
-                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
-                                                                    <li>Bonus: <strong>N/A</strong></li>
-                                                                </ul>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="61"><!-- pricing-active  -->
-                                                                <div class="pricing-head"><!-- pricing-head-active -->
-                                                                    <h3>6 Month<span> Billing Package </span></h3>
-                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
-                                                                </div>
-                                                                <ul class="pricing-content list-unstyled">
-                                                                    <li>Bill (For 1st Box): <strong>c$150</strong></li>
-                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                            
-                                                                    <li>Bonus: <strong>1 Months addition or c$40 calling card</strong></li>
-                                                                </ul>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="pricing hover-effect" id="62">
-                                                                <div class="pricing-head">
-                                                                    <h3>1 Year<span> Billing Package </span></h3>
-                                                                    <h4><em>$</em>0<em>.00</em> <span> For 1st Box </span></h4>
-                                                                </div>
-                                                                <ul class="pricing-content list-unstyled">
-                                                                    <li>Bill (For 1st Box): <strong>c$300</strong></li>
-                                                                    <li>Security Deposit (SD): <strong>c$50</strong></li>                                           
-                                                                    <li>Bonus: <strong>3 Months addition or c$100 calling card</strong></li>
-                                                                </ul>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
+                                                
                                                 <div class="tab-pane" id="custom">
                                                     <div class="panel-body">
                                                         <div class="col-md-6 col-md-offset-3">
