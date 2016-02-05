@@ -17,14 +17,10 @@
 
 
                 <iframe width="652" height="400"
-                src="<?php echo $this->webroot; ?>video/TOTALCABLE_AD.mp4"
-                        <!--src="https://www.youtube.com/embed/lg63wuBW98E?autoplay=1"-->                       
-  
-
+                        src="https://www.youtube.com/embed/lg63wuBW98E?autoplay=1"    
+               <!--src="<?php // echo $this->webroot;  ?>video/TOTALCABLE_AD.mp4"-->
                         </iframe>
             </div>
-
-
 
             <div class="col-md-5 tab-style-1">
                 <ul class="nav nav-tabs">
@@ -45,10 +41,6 @@
                                     <i class="fa fa-hand-o-right"></i> High Speed Internet connection (4 – 8 Mbps)
                                 </div>
                             </div>
-
-
-
-
                         </div>
                     </div>
                     <div class="tab-pane row fade" id="tab-2">
