@@ -11,11 +11,17 @@
                         Now you can watch Live TV Channels, movies and shows whenever you are. A high speed internet (with download speed of 4 mbps and up) and STB viewing devices are all you need.
                     </p>
                 </div>
+                <div class="img-responsive">
+
+                </div>
 
 
                 <iframe width="652" height="400"
-                        src="http://www.youtube.com/embed/j3qZ_VN64-I?autoplay=1">
-                </iframe>
+                src="<?php echo $this->webroot; ?>video/TOTALCABLE_AD.mp4"
+                        <!--src="https://www.youtube.com/embed/lg63wuBW98E?autoplay=1"-->                       
+  
+
+                        </iframe>
             </div>
 
 
@@ -96,7 +102,7 @@
                                 <div class="col-md-12 col-sm-12">
                                     <i class="fa fa-hand-o-right"></i> Best internet receiver with HD picture quality Digital.
                                 </div>
-                                
+
                                 <div class="col-md-12 col-sm-12">
                                     <i class="fa fa-hand-o-right"></i> PVR – Pre recorded channels based on EPG.
                                 </div>
@@ -106,7 +112,7 @@
                                 <div class="col-md-12 col-sm-12">
                                     <i class="fa fa-hand-o-right"></i> EPG – Electronic channels guide.
                                 </div>
-                                
+
                                 <div class="col-md-12 col-sm-12">
                                     <i class="fa fa-hand-o-right"></i> YouTube. 
                                 </div>
