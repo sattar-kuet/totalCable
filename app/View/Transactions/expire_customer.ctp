@@ -7,7 +7,7 @@
 
     }
 
-    .ui-datepicker .ui-datepicker-next span {
+/*    .ui-datepicker .ui-datepicker-next span {
         display: block;
         position: absolute;
         left: 50%;
@@ -40,7 +40,7 @@
         border-bottom: 11px solid transparent;
         border-right:  11px solid green;
 
-    } 
+    } */
 </style>
 
 <!-- End css for table design and icon-->
@@ -88,9 +88,8 @@
                 <div class="box">
 
                     <div class="title">
-
                         <h4>
-                            <span>Search transaction information</span>
+                            <span>Search paid customer information</span>
                         </h4>
 
                         <?php echo $this->Session->flash(); ?>
@@ -103,29 +102,25 @@
                     </div>
                     <div class="content">
                         <?php
-                        echo $this->Form->create('transactions', array(
+                        echo $this->Form->create('paidcustomer', array(
                             'inputDefaults' => array(
                                 'label' => false,
                                 'div' => false
                             ),
                             'id' => 'form-validate',
                             'class' => 'form-horizontal',
-                            'novalidate' => 'novalidate',
-                            array('controller' => 'transactions', 'action' => 'manage')
+                            'novalidate' => 'novalidate'
                                 )
                         );
                         ?>
-
-
                         <div class="form-row row-fluid">
                             <div class="span12">
                                 <div class="row-fluid">
                                     <label class="form-label span3" for="required">Select date</label>
                                     <?php
                                     echo $this->Form->input(
-                                            'created', array(
-                                        'id' => 'e1',
-                                        'name' => 'e1',
+                                            'daterange', array(
+                                        'id' => 'e1',                                       
                                         'class' => 'span9 text'
                                             )
                                     );
@@ -133,7 +128,6 @@
                                 </div>
                             </div>
                         </div> 
-
                         <div class="form-row row-fluid">
                             <div class="span12">
                                 <div class="row-fluid">
@@ -142,7 +136,7 @@
                                         <div class="span9 controls">
                                             <?php
                                             echo $this->Form->button(
-                                                    'Search', array('class' => 'btn btn-success','controller' => 'transactions', 'action' => 'manage', 'type' => 'submit')
+                                                    'Search', array('class' => 'btn btn-success','type' => 'submit')
                                             );
                                             ?>
 
@@ -153,9 +147,6 @@
                         </div>
                         <?php echo $this->Form->end(); ?>
 
-                        <!--<input id="e1" name="e1">
-                        <button class="btn btn-success" type="submit">Search</button>-->
-
                     </div>
 
                 </div><!-- End .box -->
@@ -163,3 +154,42 @@
             </div><!-- End .span12 -->
 
         </div><!-- End .row-fluid -->  
+
+        <?php if ($clicked): ?>       
+
+            <div class="row-fluid">
+                <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" width="100%">
+                    <thead>
+                        <tr>                                          
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Card No</th>
+                            <th>Zip Code</th>
+                            <th>Amount</th>
+                            <th>Expire Date</th>
+                            <th>Package Exp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($paidcustomers as $single):
+                            $info = $single['PaidCustomer'];
+                            ?>
+                            <tr class="odd gradeX">
+                                <td><?php echo $info['fname']; ?></td>
+                                <td><?php echo $info['lname']; ?></td>
+                                <td><?php echo $info['card_no']; ?></td>
+                                <td><?php echo $info['zip_code']; ?></td>
+                                <td><?php echo $info['amount']; ?></td>
+                                <td><?php echo $info['exp_date']; ?></td>
+                                <td><?php echo $info['package_exp_date']; ?></td>
+                            </tr>
+                            <?php
+                        endforeach;
+                        ?>
+                    </tbody>
+
+                </table>
+            </div>
+
+        <?php endif; ?>
