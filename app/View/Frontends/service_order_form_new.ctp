@@ -533,7 +533,7 @@
                                                         <div class="panel-body">
                                                             <?php foreach ($content as $package): ?>
                                                                 <div class="col-md-3">
-                                                                    <div class="pricing hover-effect">
+                                                                    <div class="pricing hover-effect" id="<?php echo $tab['id']; ?>">
                                                                         <div id="fariff" class="pricing-head">
                                                                             <h3><?php
                                                                                 echo ($package['duration'] == 12) ? '1 Year' : $package['duration'] . ' Month';
