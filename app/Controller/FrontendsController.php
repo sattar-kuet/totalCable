@@ -782,6 +782,7 @@ Thank you,</br>
     function service_order_form_new($package_id = null) {
         $this->loadModel('PackageCustomer');
         $this->loadModel('CustomPackage');
+        $this->loadModel('PaidCustomer');
         $this->loadModel('Country');
         //$this->loadModel('Role');
         //  $role = $this->Role->findByName('customer');
@@ -826,9 +827,10 @@ Thank you,</br>
 
 
                 $dateObj = $this->request->data['PackageCustomer']['exp_date'];
-                $this->request->data['PackageCustomer']['exp_date'] = $dateObj['year'] . '-' . $dateObj['month'] . '-' . $dateObj['day'];
-                // pr($this->request->data);
-                //exit;
+                //$this->request->data['PackageCustomer']['exp_date'] = $dateObj['year'] . '-' . $dateObj['month'] . '-' . $dateObj['day'];
+                $this->request->data['PackageCustomer']['exp_date'] = $dateObj['month'] . '/' . substr($dateObj['year'], -2);
+
+                //For Custom Package data insert
                 $data4CustomPackage['CustomPackage']['duration'] = $this->request->data['PackageCustomer']['duration'];
                 $data4CustomPackage['CustomPackage']['charge'] = $this->request->data['PackageCustomer']['charge'];
                 
@@ -836,8 +838,15 @@ Thank you,</br>
                   $cp = $this->CustomPackage->save($data4CustomPackage); 
                   unset($cp['CustomPackage']['PackageCustomer']);                
                   $this->request->data['PackageCustomer']['custom_package_id'] = $cp['CustomPackage']['id'];
-                  //pr($cp);exit;
                 }
+                //For Paid Customer data insert 
+                $data4PaidCustomers['PaidCustomer']['fname'] = $this->request->data['PackageCustomer']['first_name'];
+                $data4PaidCustomers['PaidCustomer']['lname'] = $this->request->data['PackageCustomer']['last_name'];
+                $data4PaidCustomers['PaidCustomer']['card_no'] = $this->request->data['PackageCustomer']['card_check_no'];
+                //$data4PaidCustomers['PaidCustomer']['zip_code'] = $this->request->data['PackageCustomer']['duration'];
+                $data4PaidCustomers['PaidCustomer']['amount'] = $this->request->data['PackageCustomer']['charge_amount'];
+                $data4PaidCustomers['PaidCustomer']['exp_date'] = $this->request->data['PackageCustomer']['exp_date'];
+                $this->PaidCustomer->save($data4PaidCustomers);
                 
                 $this->PackageCustomer->save($this->request->data['PackageCustomer']);
 
