@@ -56,11 +56,9 @@ class FrontendsController extends AppController {
             ),
             //for attachment upload 
             'file' => array(
-
             ),
             //for id card upload 
             'id_card' => array(
-                
             ),
             'parent_dir' => 'card_holder_signature',
             'target_path' => array(
@@ -748,14 +746,14 @@ Thank you,</br>
         $sql = "SELECT *  FROM packages
                 LEFT JOIN psettings ON packages.id=psettings.package_id ORDER BY packages.id ASC";
         $info = $this->Package->query($sql);
-        
+
         $filteredPackage = array();
         $unique = array();
         $index = 0;
         foreach ($info as $key => $menu) {
             //pr($menu); exit;
             $pm = $menu['packages']['name'];
-            
+
             if (isset($unique[$pm])) {
                 //  echo 'already exist'.$key.'<br/>';
                 if (!empty($menu['psettings']['duration'])) {
@@ -787,14 +785,14 @@ Thank you,</br>
         //$this->loadModel('Role');
         //  $role = $this->Role->findByName('customer');
         $this->layout = 'public-without-slider';
-        
+
         $this->tariffplan(); //Call tarrifplan fuction to show packagese
-        
+
         if ($this->request->is('post')) {
             $this->PackageCustomer->set($this->request->data);
             $this->CustomPackage->set($this->request->data);
             $msg = '';
-//pr($this->request->data); exit;
+
             if ($this->PackageCustomer->validates()) {
 
                 $result = array();
@@ -804,7 +802,7 @@ Thank you,</br>
                 } else {
                     $this->request->data['PackageCustomer']['ch_signature'] = '';
                 }
-                
+
                 //ID Card Upload
                 if (!empty($this->request->data['PackageCustomer']['id_card']['name'])) {
                     $result = $this->processImg($this->request->data['PackageCustomer'], 'id_card');
@@ -833,11 +831,12 @@ Thank you,</br>
                 //For Custom Package data insert
                 $data4CustomPackage['CustomPackage']['duration'] = $this->request->data['PackageCustomer']['duration'];
                 $data4CustomPackage['CustomPackage']['charge'] = $this->request->data['PackageCustomer']['charge'];
-                
-                if(!empty($this->request->data['PackageCustomer']['charge'])){
-                  $cp = $this->CustomPackage->save($data4CustomPackage); 
-                  unset($cp['CustomPackage']['PackageCustomer']);                
-                  $this->request->data['PackageCustomer']['custom_package_id'] = $cp['CustomPackage']['id'];
+
+                if (!empty($this->request->data['PackageCustomer']['charge'])) {
+                    $cp = $this->CustomPackage->save($data4CustomPackage);
+
+                    unset($cp['CustomPackage']['PackageCustomer']);
+                    $this->request->data['PackageCustomer']['custom_package_id'] = $cp['CustomPackage']['id'];
                 }
                 //For Paid Customer data insert 
                 $data4PaidCustomers['PaidCustomer']['fname'] = $this->request->data['PackageCustomer']['first_name'];
@@ -846,8 +845,11 @@ Thank you,</br>
                 //$data4PaidCustomers['PaidCustomer']['zip_code'] = $this->request->data['PackageCustomer']['duration'];
                 $data4PaidCustomers['PaidCustomer']['amount'] = $this->request->data['PackageCustomer']['charge_amount'];
                 $data4PaidCustomers['PaidCustomer']['exp_date'] = $this->request->data['PackageCustomer']['exp_date'];
+
+                $data4PaidCustomers['PaidCustomer']['package_exp_date'] = date("Y-m-d", strtotime("+1 months"));
+
                 $this->PaidCustomer->save($data4PaidCustomers);
-                
+
                 $this->PackageCustomer->save($this->request->data['PackageCustomer']);
 
                 $msg = '<div class="alert alert-success">
@@ -861,18 +863,18 @@ Thank you,</br>
             return $this->redirect($this->referer());
         }
     }
-    
+
     function edit_service_order($id = null) {
         $this->layout = 'public-without-slider';
-        
+
         $this->loadModel('PackageCustomer');
         $this->loadModel('CustomPackage');
         $customer_info = $this->PackageCustomer->findById($id);
-        
+
         if ($this->request->is('post') || $this->request->is('put')) {
             //pr($customer_info['PackageCustomer']['id']); exit;
-            
-            $this->PackageCustomer->id = $customer_info['PackageCustomer']['id'];            
+
+            $this->PackageCustomer->id = $customer_info['PackageCustomer']['id'];
             $this->PackageCustomer->save($this->request->data['PackageCustomer']);
             $msg = '<div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>

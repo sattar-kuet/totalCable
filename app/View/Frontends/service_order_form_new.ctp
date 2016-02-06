@@ -529,7 +529,7 @@
                                                     if (!$n) {
                                                         echo 'active';
                                                     }
-                                                    ?>" id="<?php echo $tab['id']; ?>">
+                                                    ?>" id="<?php echo $tab['id']; ?>"  >
                                                         <div class="panel-body">
                                                             <?php foreach ($content as $package): ?>
                                                                 <div class="col-md-3">
