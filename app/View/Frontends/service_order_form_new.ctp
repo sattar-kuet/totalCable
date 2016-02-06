@@ -219,7 +219,7 @@
                         <div class="col-md-2 signupfont">
                             Address:
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <div class="input-list style-4 clearfix">
                                 <div>
                                     <?php
@@ -231,7 +231,23 @@
                                     ?> 
                                 </div>                            
                             </div>
-                        </div>                        
+                        </div> 
+                        <div class="col-md-1 signupfont">
+                            ZIP:
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-list style-4 clearfix">
+                                <div>
+                                    <?php
+                                    echo $this->Form->input(
+                                            'zip', array(
+                                        'class' => 'required',
+                                            )
+                                    );
+                                    ?> 
+                                </div>                            
+                            </div>
+                        </div>
                     </div>
                 </div>
                 &nbsp;
@@ -529,11 +545,11 @@
                                                     if (!$n) {
                                                         echo 'active';
                                                     }
-                                                    ?>" id="<?php echo $tab['id']; ?>">
+                                                    ?>" id="<?php echo $tab['id'];?>">
                                                         <div class="panel-body">
                                                             <?php foreach ($content as $package): ?>
                                                                 <div class="col-md-3">
-                                                                    <div class="pricing hover-effect" id="<?php echo $tab['id']; ?>">
+                                                                    <div class="pricing hover-effect" data-id="<?php echo $package['id']?>">
                                                                         <div id="fariff" class="pricing-head">
                                                                             <h3><?php
                                                                                 echo ($package['duration'] == 12) ? '1 Year' : $package['duration'] . ' Month';
@@ -553,6 +569,7 @@
                                                                         <ul class="pricing-content list-unstyled">
                                                                             <?php echo $package['offer']; ?>
                                                                         </ul>
+                                                                        
                                                                     </div>
                                                                     
                                                                 </div>

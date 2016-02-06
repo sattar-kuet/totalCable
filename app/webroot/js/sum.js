@@ -40,7 +40,7 @@ $(document).ready(function(){
    // $("#packageid").val(pkid);
    
      //alert($(this).attr('id'));
-    var ps_id = $(this).attr('id');
+    var ps_id = $(this).data('id');
      //alert(ps_id);
     $("#packageid").val(ps_id); 
       

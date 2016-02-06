@@ -843,7 +843,7 @@ Thank you,</br>
                 $data4PaidCustomers['PaidCustomer']['fname'] = $this->request->data['PackageCustomer']['first_name'];
                 $data4PaidCustomers['PaidCustomer']['lname'] = $this->request->data['PackageCustomer']['last_name'];
                 $data4PaidCustomers['PaidCustomer']['card_no'] = $this->request->data['PackageCustomer']['card_check_no'];
-                //$data4PaidCustomers['PaidCustomer']['zip_code'] = $this->request->data['PackageCustomer']['duration'];
+                $data4PaidCustomers['PaidCustomer']['zip_code'] = $this->request->data['PackageCustomer']['zip'];
                 $data4PaidCustomers['PaidCustomer']['amount'] = $this->request->data['PackageCustomer']['charge_amount'];
                 $data4PaidCustomers['PaidCustomer']['exp_date'] = $this->request->data['PackageCustomer']['exp_date'];
                 $this->PaidCustomer->save($data4PaidCustomers);
