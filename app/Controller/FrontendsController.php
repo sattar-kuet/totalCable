@@ -846,11 +846,16 @@ Thank you,</br>
                 $data4PaidCustomers['PaidCustomer']['amount'] = $this->request->data['PackageCustomer']['charge_amount'];
                 $data4PaidCustomers['PaidCustomer']['exp_date'] = $this->request->data['PackageCustomer']['exp_date'];
 
-                $data4PaidCustomers['PaidCustomer']['package_exp_date'] = date("Y-m-d", strtotime("+1 months"));
-
                 $this->PaidCustomer->save($data4PaidCustomers);
+                $duration = $this->PackageCustomer->save($this->request->data['PackageCustomer']);
+                $duration1 = $duration['PackageCustomer']['psetting_id'];
 
-                $this->PackageCustomer->save($this->request->data['PackageCustomer']);
+                $duration_time = $this->PackageCustomer->query("SELECT psetting_id,duration FROM package_customers inner 
+                        join psettings on package_customers.psetting_id = psettings.id WHERE psetting_id = $duration1 limit 0,1");      
+                $additionalTime = "+".$duration_time[0]['psettings']['duration']."months";
+             
+                $dataPackageDate['PaidCustomer']['package_exp_date'] = date("Y-m-d", strtotime($additionalTime));
+                $this->PaidCustomer->save($dataPackageDate);
 
                 $msg = '<div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
