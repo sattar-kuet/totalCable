@@ -120,7 +120,7 @@
                                     <?php
                                     echo $this->Form->input(
                                             'daterange', array(
-                                        'id' => 'e1',                                       
+                                        'id' => 'e2',                                       
                                         'class' => 'span9 text'
                                             )
                                     );
