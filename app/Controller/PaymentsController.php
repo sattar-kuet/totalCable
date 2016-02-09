@@ -27,7 +27,7 @@ class PaymentsController extends AppController {
         $this->Auth->allow('process');
     }
 
-    public function process() {
+    public function process1() {
        
         
         $this->layout = 'ajax';
@@ -208,6 +208,92 @@ class PaymentsController extends AppController {
             $this->Transaction->create();
             $this->Transaction->save($transactionData);
         endforeach;
+        $msg .='</ul>';
+        $this->set(compact('msg'));
+    }
+    
+    public function individual_transaction($id=null) {
+       
+        
+        $this->layout = 'ajax';
+
+        // Common setup for API credentials  
+        $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
+         $merchantAuthentication->setName("95x9PuD6b2"); // testing mode
+        //$merchantAuthentication->setName("42UHbr9Qa9B"); // live mode
+        $merchantAuthentication->setTransactionKey("547z56Vcbs3Nz9R9");  // testing mode
+        //$merchantAuthentication->setTransactionKey("6468X36RkrKGm3k6"); // live mode
+        $refId = 'ref' . time();
+
+// Create the payment data for a credit card
+        $creditCard = new AnetAPI\CreditCardType();
+        $this->loadModel('PaidCustomer');
+        $this->loadModel('Transaction');
+        
+        
+        $pcustomers = $this->PaidCustomer->find('first', array('conditions' => array('PaidCustomer.id' => $id)));
+        
+        //pr($pcustomers);
+       //exit;
+        $msg = '<ul>';
+        //foreach ($pcustomers as $pcustomer):
+            $pc = $pcustomers['PaidCustomer'];
+       // pr($pc); exit;
+            $creditCard->setCardNumber($pc['card_no']); // testing
+            $creditCard->setExpirationDate($pc['exp_date']); // testing
+            //     $creditCard->setCardNumber("4117733943147221"); // live
+            //  $creditCard->setExpirationDate("07-2019"); //live
+            $paymentOne = new AnetAPI\PaymentType();
+            $paymentOne->setCreditCard($creditCard);
+            $transactionData['paid_customer_id'] = $pc['id'];
+            //    Bill To
+            $billto = new AnetAPI\CustomerAddressType();
+            $billto->setFirstName($pc['fname']);
+            $billto->setLastName($pc['lname']);
+            // $billto->setCompany("Souveniropolis");
+            //$billto->setAddress("14 Main Street");
+            //$billto->setCity("Pecan Springs");
+            //$billto->setState("TX");
+            $billto->setZip($pc['zip_code']);
+            //$billto->setCountry("USA");
+            // Create a transaction
+            $transactionRequestType = new AnetAPI\TransactionRequestType();
+            $transactionRequestType->setTransactionType("authCaptureTransaction");
+            $transactionRequestType->setAmount($pc['amount']);
+            $transactionRequestType->setPayment($paymentOne);
+            $request = new AnetAPI\CreateTransactionRequest();
+            $request->setMerchantAuthentication($merchantAuthentication);
+            $request->setRefId($refId);
+            $request->setTransactionRequest($transactionRequestType);
+            $controller = new AnetController\CreateTransactionController($request);
+               $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX); //Testing
+            //$response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION); // live
+            //  pr($response); exit;
+            $transactionData['error_msg'] = '';
+            $transactionData['status'] = '';
+            $transactionData['trx_id'] = '';
+            $transactionData['auth_code'] = '';
+            if ($response != null) {
+                $tresponse = $response->getTransactionResponse();
+                // pr($tresponse ); exit;
+                if (($tresponse != null) && ($tresponse->getResponseCode() == "1")) {
+                    $transactionData['status'] = 'success';
+                    $transactionData['trx_id'] = $tresponse->getTransId();
+                    $transactionData['auth_code'] = $tresponse->getAuthCode();
+                    $msg .='<li> Transaction for ' . $pc['fname'] . ' ' . $pc['lname'] . ' successfull</li>';
+                } else {
+                    $transactionData['status'] = 'error';
+                    $transactionData['error_msg'] = "Charge Credit Card ERROR :  Invalid response";
+                    $msg .='<li> Transaction for ' . $pc['fname'] . ' ' . $pc['lname'] . ' failed for Charge Credit Card ERROR</li>';
+                }
+            } else {
+                $transactionData['status'] = 'error';
+                $transactionData['error_msg'] = "Charge Credit card Null response returned";
+                $msg .='<li> Transaction for ' . $pc['fname'] . ' ' . $pc['lname'] . ' failed for Charge Credit card Null response</li>';
+            }
+            $this->Transaction->create();
+            $this->Transaction->save($transactionData);
+       // endforeach;
         $msg .='</ul>';
         $this->set(compact('msg'));
     }

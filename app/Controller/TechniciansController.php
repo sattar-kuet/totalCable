@@ -62,6 +62,7 @@ class TechniciansController extends AppController {
         $customer_info = $this->PackageCustomer->find('all', array('conditions' => array('user_id' => $id)));       
         $this->set(compact('customer_info'));
     }
+    
 
 }
 

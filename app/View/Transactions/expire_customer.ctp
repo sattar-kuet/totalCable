@@ -151,7 +151,7 @@
                                 <td><?php echo $info['package_exp_date']; ?></td>
                                 <td>   
                                             <div class="controls center">                                               
-                                        <a  href="<?php echo Router::url(array('controller'=>'payments','action'=>'process', $info['id'])
+                                        <a onclick="if (confirm(&quot;Are you sure complete this transaction?&quot)) { return true; } return false;" href="<?php echo Router::url(array('controller'=>'payments','action'=>'individual_transaction', $info['id'])
                                                 )?>" class="tip"><span class="icon16 icomoon-icon-coins" title="Make transaction for this customer"></span></a>
                                                 
                                             </div>
