@@ -6,41 +6,6 @@
         display: table-row-group !important;
 
     }
-
-/*    .ui-datepicker .ui-datepicker-next span {
-        display: block;
-        position: absolute;
-        left: 50%;
-        margin-left: -8px;
-        top: 35%;
-        margin-top: -8px;
-        height: 0px !important;
-        width: 20px;
-        color: red !important;
-        width: 0;
-        height: 0;
-        border-top: 11px solid transparent;
-        border-bottom: 11px solid transparent;
-        border-left: 11px solid green;
-    }
-
-    .ui-datepicker .ui-datepicker-prev span{
-        display: block;
-        position: absolute;
-        left: 50%;
-        margin-left: -8px;
-        top: 35%;
-        margin-top: -8px;
-        height: 0px !important;
-        width: 20px;
-        color: red !important;
-        width: 0;
-        height: 0;
-        border-top: 11px solid transparent;
-        border-bottom: 11px solid transparent;
-        border-right:  11px solid green;
-
-    } */
 </style>
 
 <!-- End css for table design and icon-->
