@@ -166,8 +166,9 @@
                             <th>Card No</th>
                             <th>Zip Code</th>
                             <th>Amount</th>
-                            <th>Expire Date</th>
-                            <th>Package Exp</th>
+                            <th>Card Exp Date</th>
+                            <th>Package Exp Date</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -183,6 +184,14 @@
                                 <td><?php echo $info['amount']; ?></td>
                                 <td><?php echo $info['exp_date']; ?></td>
                                 <td><?php echo $info['package_exp_date']; ?></td>
+                                <td>   
+                                            <div class="controls center">                                               
+                                        <a  href="<?php echo Router::url(array('controller'=>'payments','action'=>'process', $info['id'])
+                                                )?>" class="tip"><span class="icon16 icomoon-icon-coins" title="Make transaction for this customer"></span></a>
+                                                
+                                            </div>
+                                            
+                                        </td>
                             </tr>
                             <?php
                         endforeach;
