@@ -26,7 +26,7 @@
  */
 	Router::connect('/', array('controller' => 'Frontends', 'action' => 'index'));
    // Router::connect('/*', array('controller' => 'Frontends'));
-        Router::connect('/payments/process', array('controller' => 'payments', 'action' => 'process'));
+        Router::connect('/payments/:action/*', array('controller' => 'payments'));
         Router::connect('/users/:action/*', array('controller' => 'users'));
 //        Router::connect('/users/manage_user', array('controller' => 'users', 'action' => 'manage_user'));
 //        Router::connect('/users/login', array('controller' => 'users', 'action' => 'login'));
