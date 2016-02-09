@@ -294,8 +294,14 @@ class PaymentsController extends AppController {
             $this->Transaction->create();
             $this->Transaction->save($transactionData);
        // endforeach;
-        $msg .='</ul>';
-        $this->set(compact('msg'));
+        //$msg .='</ul>';
+        $msg1 = '<div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>' .$msg. '</strong>
+    </div>';
+        $this->Session->setFlash($msg1);
+        return $this->redirect($this->referer());
+        //$this->set(compact('msg'));
     }
 }
 
