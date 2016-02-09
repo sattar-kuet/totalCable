@@ -875,12 +875,12 @@ Thank you,</br>
         $this->loadModel('PackageCustomer');
         $this->loadModel('CustomPackage');
         $customer_info = $this->PackageCustomer->findById($id);
-<<<<<<< HEAD
+
         
         $this->tariffplan(); //Call tarrifplan fuction to show packagese
-=======
 
->>>>>>> origin/master
+
+
         if ($this->request->is('post') || $this->request->is('put')) {
             //pr($customer_info['PackageCustomer']['id']); exit;
 
