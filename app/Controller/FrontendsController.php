@@ -56,11 +56,9 @@ class FrontendsController extends AppController {
             ),
             //for attachment upload 
             'file' => array(
-
             ),
             //for id card upload 
             'id_card' => array(
-                
             ),
             'parent_dir' => 'card_holder_signature',
             'target_path' => array(
@@ -768,7 +766,7 @@ Thank you,</br>
                 } else {
                     $this->request->data['PackageCustomer']['ch_signature'] = '';
                 }
-                
+
                 //ID Card Upload
                 if (!empty($this->request->data['PackageCustomer']['id_card']['name'])) {
                     $result = $this->processImg($this->request->data['PackageCustomer'], 'id_card');
@@ -796,14 +794,14 @@ Thank you,</br>
                 //exit;
                 $data4CustomPackage['CustomPackage']['duration'] = $this->request->data['PackageCustomer']['duration'];
                 $data4CustomPackage['CustomPackage']['charge'] = $this->request->data['PackageCustomer']['charge'];
-                
-                if(!empty($this->request->data['PackageCustomer']['charge'])){
-                  $cp = $this->CustomPackage->save($data4CustomPackage); 
-                  unset($cp['CustomPackage']['PackageCustomer']);                
-                  $this->request->data['PackageCustomer']['custom_package_id'] = $cp['CustomPackage']['id'];
-                  //pr($cp);exit;
+
+                if (!empty($this->request->data['PackageCustomer']['charge'])) {
+                    $cp = $this->CustomPackage->save($data4CustomPackage);
+                    unset($cp['CustomPackage']['PackageCustomer']);
+                    $this->request->data['PackageCustomer']['custom_package_id'] = $cp['CustomPackage']['id'];
+                    //pr($cp);exit;
                 }
-                
+
                 $this->PackageCustomer->save($this->request->data['PackageCustomer']);
 
                 $msg = '<div class="alert alert-success">
@@ -817,18 +815,18 @@ Thank you,</br>
             return $this->redirect($this->referer());
         }
     }
-    
+
     function edit_service_order($id = null) {
         $this->layout = 'public-without-slider';
-        
+
         $this->loadModel('PackageCustomer');
         $this->loadModel('CustomPackage');
         $customer_info = $this->PackageCustomer->findById($id);
-        
+
         if ($this->request->is('post') || $this->request->is('put')) {
             //pr($customer_info['PackageCustomer']['id']); exit;
-            
-            $this->PackageCustomer->id = $customer_info['PackageCustomer']['id'];            
+
+            $this->PackageCustomer->id = $customer_info['PackageCustomer']['id'];
             $this->PackageCustomer->save($this->request->data['PackageCustomer']);
             $msg = '<div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
