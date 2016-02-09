@@ -869,6 +869,7 @@ Thank you,</br>
         $this->loadModel('CustomPackage');
         $customer_info = $this->PackageCustomer->findById($id);
         
+        $this->tariffplan(); //Call tarrifplan fuction to show packagese
         if ($this->request->is('post') || $this->request->is('put')) {
             //pr($customer_info['PackageCustomer']['id']); exit;
             
