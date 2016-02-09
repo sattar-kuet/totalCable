@@ -494,7 +494,7 @@ class UsersController extends AppController {
 
     function editpackage() {
         $this->loadModel('Package');
-
+        
         if ($this->request->is('post')) {
             pr($this->request->data);
             $this->Package->id = $this->request->data['Package']['id'];
