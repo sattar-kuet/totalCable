@@ -8,6 +8,7 @@ App::uses('HttpSocket', 'Network/Http');
 
 App::uses('AppController', 'Controller');
 
+
 class TransactionsController extends AppController {
 
     var $layout = 'admin';
@@ -52,31 +53,30 @@ class TransactionsController extends AppController {
 
     function search() {
         $this->loadModel('Transaction');
-//        $data_info = $this->Transaction->find('all');
-//        $this->set(compact('data_info'));
+        ;
         $clicked = false;
         if ($this->request->is('post') || $this->request->is('put')) {
             $datrange = json_decode($this->request->data['Transaction']['daterange'], true);
             $conditions = array('Transaction.created >=' => $datrange['start'], 'Transaction.created <=' => $datrange['end']);
             $transactions = $this->Transaction->find('all', array('conditions' => $conditions));
-          
+
             $clicked = true;
             $this->set(compact('transactions'));
-
-//            $date = $this->Transaction->find('all', array(
-//                'conditions' => array('created' => $created)
-//            ));           
         }
         $this->set(compact('clicked'));
-//        $customer_info = $this->Transaction->find('all', array('conditions' => array('created' => $created)));
     }
 
     function expire_customer() {
-        $this->loadModel('Transaction');
+        $this->loadModel('PaidCustomer');
+        $clicked = false;
         if ($this->request->is('post') || $this->request->is('put')) {
-//            pr($this->request->data);
-//            exit;
+            $datrange = json_decode($this->request->data['paidcustomer']['daterange'], true);
+            $conditions = array('PaidCustomer.package_exp_date >=' => $datrange['start'], 'PaidCustomer.package_exp_date <=' => $datrange['end']);
+            $paidcustomers = $this->PaidCustomer->find('all', array('conditions' => $conditions));
+            $clicked = true;
+            $this->set(compact('paidcustomers'));
         }
+        $this->set(compact('clicked'));
     }
 
     function manage() {

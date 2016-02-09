@@ -511,7 +511,7 @@ class UsersController extends AppController {
     }
 
     function psetting($id = null) {
-        $this->layout = "news";
+        //$this->layout = "news";
         $this->loadModel('Package');
 
         $this->set('package', $this->Package->find("list"));

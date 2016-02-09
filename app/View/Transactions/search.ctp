@@ -7,40 +7,40 @@
 
     }
 
-/*    .ui-datepicker .ui-datepicker-next span {
-        display: block;
-        position: absolute;
-        left: 50%;
-        margin-left: -8px;
-        top: 35%;
-        margin-top: -8px;
-        height: 0px !important;
-        width: 20px;
-        color: red !important;
-        width: 0;
-        height: 0;
-        border-top: 11px solid transparent;
-        border-bottom: 11px solid transparent;
-        border-left: 11px solid green;
-    }
-
-    .ui-datepicker .ui-datepicker-prev span{
-        display: block;
-        position: absolute;
-        left: 50%;
-        margin-left: -8px;
-        top: 35%;
-        margin-top: -8px;
-        height: 0px !important;
-        width: 20px;
-        color: red !important;
-        width: 0;
-        height: 0;
-        border-top: 11px solid transparent;
-        border-bottom: 11px solid transparent;
-        border-right:  11px solid green;
-
-    } */
+    /*    .ui-datepicker .ui-datepicker-next span {
+            display: block;
+            position: absolute;
+            left: 50%;
+            margin-left: -8px;
+            top: 35%;
+            margin-top: -8px;
+            height: 0px !important;
+            width: 20px;
+            color: red !important;
+            width: 0;
+            height: 0;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            border-left: 11px solid green;
+        }
+    
+        .ui-datepicker .ui-datepicker-prev span{
+            display: block;
+            position: absolute;
+            left: 50%;
+            margin-left: -8px;
+            top: 35%;
+            margin-top: -8px;
+            height: 0px !important;
+            width: 20px;
+            color: red !important;
+            width: 0;
+            height: 0;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            border-right:  11px solid green;
+    
+        } */
 </style>
 
 <!-- End css for table design and icon-->
@@ -50,8 +50,6 @@
     <div class="contentwrapper"><!--Content wrapper-->
 
         <div class="heading">
-
-                        
 
             <div class="resBtnSearch">
                 <a href="#"><span class="icon16 icomoon-icon-search-3"></span></a>
@@ -63,7 +61,6 @@
                     <input type="text" id="tipue_search_input" class="top-search text" placeholder="Search here ...">
                     <input type="submit" id="tipue_search_button" class="search-btn nostyle" value="">
                 </form>
-
             </div><!-- End search -->
 
             <ul class="breadcrumb">
@@ -110,12 +107,10 @@
                             ),
                             'id' => 'form-validate',
                             'class' => 'form-horizontal',
-                            'novalidate' => 'novalidate',
-                            array('controller' => 'transactions', 'action' => 'manage')
+                            'novalidate' => 'novalidate'
                                 )
                         );
                         ?>
-
 
                         <div class="form-row row-fluid">
                             <div class="span12">
@@ -141,7 +136,7 @@
                                         <div class="span9 controls">
                                             <?php
                                             echo $this->Form->button(
-                                                    'Search', array('class' => 'btn btn-success', 'controller' => 'transactions', 'action' => 'manage', 'type' => 'submit')
+                                                    'Search', array('class' => 'btn btn-success', 'type' => 'submit')
                                             );
                                             ?>
 
@@ -151,7 +146,7 @@
                             </div> 
                         </div>
                         <?php echo $this->Form->end(); ?>
-                        
+
                     </div>
 
                 </div><!-- End .box -->
@@ -165,8 +160,7 @@
             <div class="row-fluid">
                 <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" width="100%">
                     <thead>
-                        <tr>                                             
-
+                        <tr>                                           
                             <th>Transactions Id</th>
                             <th>Authentication Code</th>
                             <th>Error Message</th>

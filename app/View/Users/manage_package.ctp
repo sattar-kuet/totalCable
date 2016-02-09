@@ -52,18 +52,18 @@
                         <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Package Type</th>
-                                    <th>Duration</th>                                   
-                                    <th>Total Charge</th>                                                                      
+                                    <th>Package Name</th>
+                                    <th>Duration (Month)</th>                                   
+                                    <th>Total Charge($)</th>                                                                      
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                foreach ($package_info as $single):
-                                    
+                                <?php                                
+                               foreach ($package_info as $single):                                 
                                $psetting = $single['Psetting'];     
                                $package_detail = $single['Package'];
+                              //pr($single); exit;  
                                     ?>
                                     <tr class="odd gradeX">
                                         <td><?php echo $package_detail['name']; ?></td>

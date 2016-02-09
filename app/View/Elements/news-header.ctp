@@ -84,7 +84,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <div class="navbar">
                 <div class="navbar-inner">
                   <div class="container-fluid">
-                    <a class="brand" href="<?php echo Router::url(array('controller'=>'admins','action'=>'deshboard'))?>">Admin</a>
+                    <a class="brand" href="<?php echo Router::url(array('controller'=>'users','action'=>'dashboard'))?>">Admin</a>
                     <div class="nav-no-collapse">
                         <ul class="nav">
                             <li class="active"><a href="dashboard.html"><span class="icon16 icomoon-icon-screen-2"></span> Dashboard</a></li>
