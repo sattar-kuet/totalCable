@@ -845,6 +845,7 @@ Thank you,</br>
                 $data4PaidCustomers['PaidCustomer']['zip_code'] = $this->request->data['PackageCustomer']['zip'];
                 $data4PaidCustomers['PaidCustomer']['amount'] = $this->request->data['PackageCustomer']['charge_amount'];
                 $data4PaidCustomers['PaidCustomer']['exp_date'] = $this->request->data['PackageCustomer']['exp_date'];
+                $data4PaidCustomers['PaidCustomer']['psetting_id'] = $this->request->data['PackageCustomer']['psetting_id'];
 
                 $this->PaidCustomer->save($data4PaidCustomers);
                 $duration = $this->PackageCustomer->save($this->request->data['PackageCustomer']);
