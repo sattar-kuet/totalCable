@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * 
  */
@@ -60,12 +60,16 @@ class FrontendsController extends AppController {
             //for id card upload 
             'id_card' => array(
             ),
+            //for id card upload 
+            'money_order' => array(
+            ),
             'parent_dir' => 'card_holder_signature',
             'target_path' => array(
                 'ch_signature' => WWW_ROOT . 'card_holder_signature' . DS,
                 'c_signature' => WWW_ROOT . 'customer_signature' . DS,
                 'file' => WWW_ROOT . 'Customer_attachment' . DS,
-                'id_card' => WWW_ROOT . 'Customer_id_card' . DS
+                'id_card' => WWW_ROOT . 'Customer_id_card' . DS,
+                'money_order' => WWW_ROOT . 'Customer_money_order' . DS
             )
         );
         if ($this->Auth->loggedIn()) {
@@ -784,7 +788,7 @@ Thank you,</br>
         $this->loadModel('Country');
         //$this->loadModel('Role');
         //  $role = $this->Role->findByName('customer');
-        $this->layout = 'public-without-slider';
+        $this->layout = 'technician';
 
         $this->tariffplan(); //Call tarrifplan fuction to show packagese
 
@@ -810,6 +814,14 @@ Thank you,</br>
                 } else {
                     $this->request->data['PackageCustomer']['id_card'] = '';
                 }
+                
+                //Money order Upload
+                if (!empty($this->request->data['PackageCustomer']['money_order']['name'])) {
+                    $result = $this->processImg($this->request->data['PackageCustomer'], 'money_order');
+                    $this->request->data['PackageCustomer']['money_order'] = (string) $result['file_dst_name'];
+                } else {
+                    $this->request->data['PackageCustomer']['money_order'] = '';
+                }
 
                 if ($this->Auth->loggedIn()) {
                     //$this->request->data['User']['psetting_id']='';
@@ -827,7 +839,13 @@ Thank you,</br>
                 $dateObj = $this->request->data['PackageCustomer']['exp_date'];
                 //$this->request->data['PackageCustomer']['exp_date'] = $dateObj['year'] . '-' . $dateObj['month'] . '-' . $dateObj['day'];
                 $this->request->data['PackageCustomer']['exp_date'] = $dateObj['month'] . '/' . substr($dateObj['year'], -2);
-
+                
+                //Input mac address...
+                $mac1 = $this->request->data['PackageCustomer']['mac_1'];
+                $mac2 = $this->request->data['PackageCustomer']['mac_2'];
+                $mac3 = $this->request->data['PackageCustomer']['mac_3'];
+                $this->request->data['PackageCustomer']['mac'] = $mac1. ', ' . $mac2 . ', ' . $mac3;
+                
                 //For Custom Package data insert
                 $data4CustomPackage['CustomPackage']['duration'] = $this->request->data['PackageCustomer']['duration'];
                 $data4CustomPackage['CustomPackage']['charge'] = $this->request->data['PackageCustomer']['charge'];
