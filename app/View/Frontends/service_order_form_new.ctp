@@ -222,7 +222,7 @@
                         <div class="col-md-2 signupfont">
                             Address:
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-10">
                             <div class="input-list style-4 clearfix">
                                 <div>
                                     <?php
@@ -235,8 +235,48 @@
                                 </div>                            
                             </div>
                         </div> 
+                        
+                    </div>
+                </div>
+                &nbsp;
+                 <div class="row">
+                    <div class="col-md-12 ">
+
+                        <div class="col-md-2 signupfont">
+                            City:
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-list style-4 clearfix">
+                                <div>
+                                    <?php
+                                    echo $this->Form->input(
+                                            'city', array(
+                                        'class' => 'required',
+                                            )
+                                    );
+                                    ?> 
+                                </div>                            
+                            </div>
+                        </div>
                         <div class="col-md-1 signupfont">
-                            ZIP:
+                            State:
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-list style-4 clearfix">
+                                <div>
+                                    <?php
+                                    echo $this->Form->input(
+                                            'state', array(
+                                        'class' => 'required'
+                                            )
+                                    );
+                                    ?> 
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="col-md-1 signupfont">
+                            Zip: 
                         </div>
                         <div class="col-md-3">
                             <div class="input-list style-4 clearfix">
@@ -247,7 +287,7 @@
                                         'class' => 'required',
                                             )
                                     );
-                                    ?> 
+                                    ?>  
                                 </div>                            
                             </div>
                         </div>
@@ -349,7 +389,7 @@
                                     <?php
                                     echo $this->Form->input(
                                             'referred_name', array(
-                                        'class' => 'required',
+                                        'class' => '',
                                             )
                                     );
                                     ?>
