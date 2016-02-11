@@ -889,7 +889,7 @@ Thank you,</br>
     }
 
     function edit_service_order($id = null) {
-        $this->layout = 'public-without-slider';
+        $this->layout = 'technician';
 
         $this->loadModel('PackageCustomer');
         $this->loadModel('CustomPackage');
