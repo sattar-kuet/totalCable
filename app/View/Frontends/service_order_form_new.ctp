@@ -139,7 +139,6 @@
                         <div class="radio-list" style="margin-left: 20px;">
                             <label class="radio-inline"><input type="radio" value="NEW INSTALLATION" name="data[PackageCustomer][service_type]">NEW INSTALLATION</label>
                             <label class="radio-inline"><input type="radio" value="SERVICE REPAIR" name="data[PackageCustomer][service_type]">SERVICE REPAIR</label>
-                            <label class="radio-inline"><input type="radio" value="CANCEL SERVICE" name="data[PackageCustomer][service_type]">CANCEL SERVICE</label>
                         </div>
                     </div>
                 </div>
@@ -220,8 +219,6 @@
                 <div class="row">
                     <div class="col-md-12 ">
 
-                        
-                        
                         <div class="col-md-2 signupfont">
                             Address:
                         </div>
@@ -339,28 +336,7 @@
                     </div>
                 </div>
                 &nbsp;
-                <div class="row">
-                    <div class="col-md-12 ">
-
-                        <div class="col-md-2 signupfont">
-                            Mac No:
-                        </div>
-                        <div class="col-md-10">
-                            <div class="input-list style-4 clearfix">
-                                <div>
-                                    <?php
-                                    echo $this->Form->input(
-                                            'mac', array(
-                                        'class' => 'required',
-                                            )
-                                    );
-                                    ?> 
-                                </div>                            
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-                &nbsp;
+                
                 <div class="row">
                     <div class="col-md-12 ">
                         <div class="col-md-2 signupfont">
@@ -516,7 +492,7 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1" aria-expanded="false">
-                                            All Packages </a>
+                                            <span style="font-weight: 700;">Select a package </span><span class="text-danger">(required)</span> </a>
                                     </h4>
                                 </div>
                                 <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
@@ -596,7 +572,7 @@
                                                 <div class="tab-pane" id="custom">
                                                     <div class="panel-body">
                                                         <div class="col-md-6 col-md-offset-3">
-                                                            <div class="pricing hover-effect">
+                                                            <div class="pricing hover-effect" data-id="0">
                                                                 <div class="pricing-head">
                                                                     <h3>Custom<span> Billing Package </span></h3>
 
@@ -771,17 +747,31 @@
                                                     <label><input id="sig1" type="radio" value="CARD (DEBIT/CREDIT)" name="data[PackageCustomer][payment_type]">CARD (DEBIT/CREDIT)</label>
                                                 </div>
                                                 <div class="">
-                                                    <label><input id="sig2" type="radio" value="PERSONAL CHECK" name="data[PackageCustomer][payment_type]">PERSONAL CHECK</label>
+                                                    <label><input id="sig1" type="radio" value="PERSONAL CHECK" name="data[PackageCustomer][payment_type]">PERSONAL CHECK</label>
                                                 </div>
                                                 <div class="">
-                                                    <label><input id="sig2" type="radio" value="CERTIFIED CHECK" name="data[PackageCustomer][payment_type]">CERTIFIED CHECK</label>
+                                                    <label><input id="sig1" type="radio" value="CERTIFIED CHECK" name="data[PackageCustomer][payment_type]">CERTIFIED CHECK</label>
                                                 </div>
                                                 <div class="">
                                                     <label><input id="sig2" type="radio" value="MONEY ORDER" name="data[PackageCustomer][payment_type]">MONEY ORDER</label>
                                                 </div>
 
                                             </div>
+                                            <div class="sss" style="display: none;">
+                                                <div class="col-md-9">
+                                <label  class="signupfont" for="exampleInputFile1">Money order copy:</label>&nbsp;
 
+                                                <!--<input type="file" name="data[PackageCustomer][ch_signature]" id="required">-->  
+                                <?php
+                                echo $this->Form->input(
+                                        'money_order', array(
+                                    'type' => 'file',
+                                    'id' => 'moneyorder'
+                                        )
+                                );
+                                ?>
+                            </div>
+                                            </div>
 
                                         </td>
                                         <td>
@@ -955,13 +945,68 @@
                                                 <div class="col-md-12">
                                                     <div class="text-center" style="margin-left: 0px;">
                                                         <div class="radio-list">
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="1 BOX" name="data[PackageCustomer][equipment_top_box]">1 BOX</label>
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="2 BOX" name="data[PackageCustomer][equipment_top_box]">2 BOX</label>
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 BOX" name="data[PackageCustomer][equipment_top_box]">3 BOX</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input id="box1" type="radio" value="1 BOX" name="data[PackageCustomer][equipment_top_box]">1 BOX</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input id="box2" type="radio" value="2 BOX" name="data[PackageCustomer][equipment_top_box]">2 BOX</label>
+                                                            <label style="padding-top: 0px;" class="radio-inline"><input id="box3" type="radio" value="3 BOX" name="data[PackageCustomer][equipment_top_box]">3 BOX</label>
                                                         </div>
                                                     </div>     
                                                 </div>
                                             </div>
+                                            <div class="row" id="mac1" style="display: none;">
+                                                <div class="col-md-3 signupfont">
+                                                    Mac no (1st box): 
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <?php
+                                                    echo $this->Form->input(
+                                                            'mac', array(
+                                                        'type' => 'text',
+                                                                'id' => 'mac_no_1',
+                                                        'class' => 'form-control input-sm'
+                                                    ));
+                                                    ?>
+                                                </div>
+
+                                            </div>
+
+                                            &nbsp;
+
+                                            <div class="row" id="mac2" style="display: none;">
+                                                <div class="col-md-3 signupfont" style="padding-right: 0px;">
+                                                    Mac no (2nd box): 
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <?php
+                                                    echo $this->Form->input(
+                                                            'mac', array(
+                                                        'type' => 'text',
+                                                                'id' => 'mac_no_2',
+                                                        'class' => 'form-control input-sm'
+                                                    ));
+                                                    ?>
+                                                </div>
+
+                                            </div>
+
+                                            &nbsp;
+                                            <div class="row" id="mac3" style="display: none;">
+                                                <div class="col-md-3 signupfont" style="padding-right: 0px;">
+                                                    Mac no (3rd box): 
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <?php
+                                                    echo $this->Form->input(
+                                                            'mac', array(
+                                                        'type' => 'text',
+                                                                'id' => 'mac_no_3',
+                                                        'class' => 'form-control input-sm'
+                                                    ));
+                                                    ?>
+                                                </div>
+
+                                            </div>
+
+                                            &nbsp;
                                         </td>
                                     </tr>
                                     <tr>
@@ -1049,128 +1094,14 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="signupfont">OTHER</span>
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 ">
-                        <!-- BEGIN SAMPLE FORM PORTLET-->
-                        <div class="portlet box"  style=" text-align: center; background-color: black;">
-                            <div class="portlet-title">
-                                <div class="caption" id="blackcaption" >
-                                    WARRANTY
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="tablehead">
-                                            EQUIPMENT
-                                        </th>
-
-                                        <th class="tablehead">
-                                            DESCRIPTION
-                                        </th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="signupfont">SITE TOP BOX</span>
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class=" text-center"><span class="signupfont">N/A</span></div>     
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="signupfont">HDMI/AV CABLE</span> 
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="text-center" style="margin-left: 0px;">
-                                                        <div class="radio-list">
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_hdmi_av]">3 MONTH</label>
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_hdmi_av]">6 MONTH</label>                                                       
-                                                        </div>
-                                                    </div>     
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <span class="signupfont">POWER ADAPTER</span>
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="text-center" style="margin-left: 0px;">
-                                                        <div class="radio-list">
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_adapter]">3 MONTH</label>
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_adapter]">6 MONTH</label>                                                       
-                                                        </div>
-                                                    </div>     
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="signupfont">REMOTE</span>
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="text-center" style="margin-left: 0px;">
-                                                        <div class="radio-list">
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="3 MONTH" name="data[PackageCustomer][warranty_remote]">3 MONTH</label>
-                                                            <label style="padding-top: 0px;" class="radio-inline"><input type="radio" value="6 MONTH" name="data[PackageCustomer][warranty_remote]">6 MONTH</label>
-                                                        </div>     
-                                                    </div>
-                                                </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="signupfont">ROUTER/DONGLE</span>
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="text-center"><span class="signupfont">NO WARRANTY</span></div>     
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+               
+               
 
                 <!-- BEGIN BUTTONS PORTLET-->
 
@@ -1243,6 +1174,7 @@
                 echo $this->Form->input(
                         'psetting_id', array(
                     'id' => 'packageid',
+                            'class' => 'required',
                     'type' => 'hidden',
                         )
                 );
