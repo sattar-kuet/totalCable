@@ -494,7 +494,7 @@ class UsersController extends AppController {
 
     function editpackage() {
         $this->loadModel('Package');
-        
+
         if ($this->request->is('post')) {
             pr($this->request->data);
             $this->Package->id = $this->request->data['Package']['id'];
@@ -788,16 +788,31 @@ class UsersController extends AppController {
         $this->loadModel('PackageCustomer');
         $this->loadModel('User');
         $this->loadModel('Psetting');
+        $this->loadModel('Package');
         $this->PackageCustomer->id = $id;
         $customer_info = $this->PackageCustomer->find('all', array('conditions' => array('PackageCustomer.id' => $id)));
         $temp = $customer_info['0'];
+        //pr($temp);exit;
         //$datetime = $customer_info['0']['PackageCustomer']['created'];
         //echo date_format($date, 'd/m/y');
-        //pr($temp); exit;
+        $package_id = $temp['Psetting']['package_id'];
+        $c_package_id = $temp['PackageCustomer']['custom_package_id'];
+        //pr($p_setting_id); exit;
         $userinfo = $this->Auth->user();
         $installed_by = $userinfo['name'];
         //$date = date("m/d/Y", strtotime($datetime));
-        $this->set(compact('temp'));
+        if($c_package_id =='') {
+           $sql = "SELECT psettings.*, packages.name  FROM packages
+                LEFT JOIN psettings ON packages.id=psettings.package_id               
+                 WHERE packages.id = $package_id
+                ";
+        $packages_details = $this->Package->query($sql);
+        $package_name = $packages_details[0]['packages']['name']; 
+        
+        }
+        
+        //pr($package_name);exit;
+        $this->set(compact('temp','package_name'));
         
         $this->request->data = $this->PackageCustomer->findById($id);
     }

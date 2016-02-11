@@ -1,3 +1,4 @@
+
 <?php
 //App::import('Vendor', 'MPDF57', array('file' => 'mpdf.php'));
 require_once(APP . 'Vendor' . DS . 'MPDF57' . DS . 'mpdf.php');
@@ -84,7 +85,13 @@ ob_start();
             </td>
             <td width="20%">
                 <b> Package: </b>             
-                   <?php echo $temp['Psetting']['offer'];?>                 
+                   <?php 
+                   if($temp['PackageCustomer']['custom_package_id'] != '') {
+                       echo 'Custom package '.$temp['CustomPackage']['duration'].' Months ('. $temp['CustomPackage']['charge'].' $)' ;
+                   }
+                   else {
+                       echo $package_name. ' '. $temp['Psetting']['duration'].' Months ('. $temp['Psetting']['amount'].' $/c$/£)';                       
+                   }?>
             </td>
         </tr>
     </table>
@@ -390,79 +397,7 @@ ob_start();
         </tbody>
     </table>
     &nbsp;
-    <table class="items" width="100%" style="font-size: 9pt; border-collapse: collapse;" cellpadding="8">
-        <thead>
-            <tr>               
-                <td>
-                    WARRANTY   
-                </td>               
-            </tr>
-        </thead>        
-    </table>
-    <table width="100%" cellpadding="8" style="border: 0.1mm solid #888888; font-size: 9pt; border-collapse: collapse;">
-        <thead>
-            <tr>
-                <td width="50%" style="border: 0.1mm solid #888888;">
-                    EQUIPMENT 
-                </td>
-                <td width="50%" style="border: 0.1mm solid #888888;">
-                    DESCRIPTION 
-                </td>
-            </tr>
-        </thead>
-        <tbody>          
-            <tr>
-                <td>
-                    SET TOP BOX 
-                </td>
-                <td>
-                    <?php
-                    echo 'N/A';
-                    ?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    HDMI/AV CABLE
-                </td>
-                <td>
-                    <?php                    
-                    echo $temp['PackageCustomer']['warranty_hdmi_av'];
-                    ?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    POWER ADAPTER
-                </td>
-                <td>
-                    <?php                    
-                    echo $temp['PackageCustomer']['warranty_adapter'];
-                    ?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    REMOTE
-                </td>
-                <td>
-                    <?php                    
-                    echo $temp['PackageCustomer']['warranty_remote'];
-                    ?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    ROUTER/DONGLE
-                </td>
-                <td>
-                    <?php
-                    echo 'NO WARRANTY';
-                    ?>
-                </td>
-            </tr>                        
-        </tbody>
-    </table>
+    
     
     <table class="items" width="100%" style="font-size: 9pt; border-collapse: collapse;" cellpadding="2">
         <tbody>
