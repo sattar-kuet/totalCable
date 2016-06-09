@@ -38,7 +38,7 @@ class FrontendsController extends AppController {
         parent::beforeFilter();
         // Allow users to register and logout.
         //  $this->Auth->allow('*');
-        $this->Auth->allow(array('index', 'fileUpload', 'service_order_form_new', 'techregistration', 'shipping_and_returns', 'packagesignup', 'customerSignup', 'troubleshoot', 'tariffplan', 'whytotalcable', 'contactus', 'newses', 'reseller', 'shipping', 'package', 'terms_and_conditions', 'refer', 'channels', 'registration', 'musical_night', 'seat_booking', 'area_channels', 'hazaro_konthe_sonar_bangla'));
+        $this->Auth->allow(array('index','about_us', 'fileUpload', 'service_order_form_new', 'techregistration', 'shipping_and_returns', 'packagesignup', 'customerSignup', 'troubleshoot', 'tariffplan', 'whytotalcable', 'contactus', 'newses', 'reseller', 'shipping', 'package', 'terms_and_conditions', 'refer', 'channels', 'registration', 'musical_night', 'seat_booking', 'area_channels', 'hazaro_konthe_sonar_bangla'));
 
         // database name must be thum_img,small_img
         $this->img_config = array(
@@ -915,6 +915,8 @@ Thank you,</br>
             $this->request->data = $customer_info;
         }
     }
-
+         function about_us() {
+        
+    }
 }
 ?>
