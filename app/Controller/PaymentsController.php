@@ -27,7 +27,7 @@ class PaymentsController extends AppController {
         $this->Auth->allow('process');
     }
 
-    public function process1() {
+    public function process() {
        
         
         $this->layout = 'ajax';
@@ -135,14 +135,13 @@ class PaymentsController extends AppController {
 //        } else {
 //            $msg = "Charge Credit card Null response returned";
 //        }
-        // Common setup for API credentials  
+       // Common setup for API credentials  
         $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
         // $merchantAuthentication->setName("95x9PuD6b2"); // testing mode
         $merchantAuthentication->setName("42UHbr9Qa9B"); // live mode
         //$merchantAuthentication->setTransactionKey("547z56Vcbs3Nz9R9");  // testing mode
-        $merchantAuthentication->setTransactionKey("6468X36RkrKGm3k6"); // live mode
+        $merchantAuthentication->setTransactionKey("56D7WjhvvBdj866C"); // live mode
         $refId = 'ref' . time();
-
 // Create the payment data for a credit card
         $creditCard = new AnetAPI\CreditCardType();
         $this->loadModel('PaidCustomer');
@@ -151,29 +150,29 @@ class PaymentsController extends AppController {
 //        pr($pcustomers);
 //        exit;
         $msg = '<ul>';
-        foreach ($pcustomers as $pcustomer):
-            $pc = $pcustomer['PaidCustomer'];
-            $creditCard->setCardNumber($pc['card_no']); // testing
-            $creditCard->setExpirationDate($pc['exp_date']); // testing
-            //     $creditCard->setCardNumber("4117733943147221"); // live
-            //  $creditCard->setExpirationDate("07-2019"); //live
+       
+          //  $pc = $pcustomer['PaidCustomer'];
+         //   $creditCard->setCardNumber('411773394347221'); // testing
+          //  $creditCard->setExpirationDate('0719'); // testing
+                 $creditCard->setCardNumber("4117733943147221"); // live
+              $creditCard->setExpirationDate("07-2019"); //live
             $paymentOne = new AnetAPI\PaymentType();
             $paymentOne->setCreditCard($creditCard);
-            $transactionData['paid_customer_id'] = $pc['id'];
+           // $transactionData['paid_customer_id'] = $pc['id'];
             //    Bill To
             $billto = new AnetAPI\CustomerAddressType();
-            $billto->setFirstName($pc['fname']);
-            $billto->setLastName($pc['lname']);
+            $billto->setFirstName('habibur');
+            $billto->setLastName('rahaman');
             // $billto->setCompany("Souveniropolis");
             //$billto->setAddress("14 Main Street");
             //$billto->setCity("Pecan Springs");
             //$billto->setState("TX");
-            $billto->setZip($pc['zip_code']);
+            $billto->setZip('11554');
             //$billto->setCountry("USA");
             // Create a transaction
             $transactionRequestType = new AnetAPI\TransactionRequestType();
             $transactionRequestType->setTransactionType("authCaptureTransaction");
-            $transactionRequestType->setAmount($pc['amount']);
+            $transactionRequestType->setAmount('1.0');
             $transactionRequestType->setPayment($paymentOne);
             $request = new AnetAPI\CreateTransactionRequest();
             $request->setMerchantAuthentication($merchantAuthentication);
@@ -182,7 +181,7 @@ class PaymentsController extends AppController {
             $controller = new AnetController\CreateTransactionController($request);
             //   $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX); //Testing
             $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION); // live
-            //  pr($response); exit;
+              pr($response); exit;
             $transactionData['error_msg'] = '';
             $transactionData['status'] = '';
             $transactionData['trx_id'] = '';
@@ -207,7 +206,7 @@ class PaymentsController extends AppController {
             }
             $this->Transaction->create();
             $this->Transaction->save($transactionData);
-        endforeach;
+        
         $msg .='</ul>';
         $this->set(compact('msg'));
     }

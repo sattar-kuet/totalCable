@@ -51,7 +51,7 @@
                 <div class="note note-success">
                     <h4 class="block">Our Packages</h4>
                     <p>
-                        Choose your package from below and click <code>Sign Up</code> button. Fill up and submit your order and we will contact you soon.
+                        Choose your package from below and click <code>Order</code> button. Fill up and submit your order and we will contact you soon.
                     </p>
                 </div>
                 <div class="" style="">

@@ -2,9 +2,6 @@
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-
-
-
 <!-- Le styles -->
 <!-- Use new way for google web fonts 
 http://www.smashingmagazine.com/2012/07/11/avoiding-faux-weights-styles-google-web-fonts -->
@@ -19,7 +16,6 @@ http://www.smashingmagazine.com/2012/07/11/avoiding-faux-weights-styles-google-w
 <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
 <html lang="en">
 <!--<![endif]-->
-
 <!-- Head BEGIN -->
 <head>
     <meta charset="utf-8">
@@ -120,9 +116,7 @@ http://www.smashingmagazine.com/2012/07/11/avoiding-faux-weights-styles-google-w
     <meta name="author" content="Total IT Solutions">
     <meta name="robots" content="index, follow" />
     <meta name="revisit-after" content="3 month" />
-    
     <!-- Total Cable, Total Cable USA, ip bangla best channel -->
-
 
     <?php
     echo $this->Html->css(
@@ -153,7 +147,16 @@ http://www.smashingmagazine.com/2012/07/11/avoiding-faux-weights-styles-google-w
             )
     );
     ?>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-78478645-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 
 </head>

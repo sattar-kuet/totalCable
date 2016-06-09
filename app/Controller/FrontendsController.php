@@ -1,7 +1,5 @@
 <?php
-/**
- * 
- */
+
 App::uses('CakeEmail', 'Network/Email');
 App::uses('HttpSocket', 'Network/Http');
 
@@ -72,6 +70,7 @@ class FrontendsController extends AppController {
                 'money_order' => WWW_ROOT . 'Customer_money_order' . DS
             )
         );
+        
         if ($this->Auth->loggedIn()) {
             $isloggedin = true;
         } else {
@@ -375,6 +374,12 @@ class FrontendsController extends AppController {
         }
     }
 
+    function about_us(){
+        
+    }
+    
+    
+            
     function newses() {
         
     }
@@ -439,6 +444,7 @@ class FrontendsController extends AppController {
 //         echo $type;
 //         exit;
         $upload = new Upload($img[$type]);
+        $upload->allowed = array('image/*');
         $upload->file_new_name_body = time();
         foreach ($this->img_config[$type] as $key => $value) {
             $upload->$key = $value;
@@ -448,8 +454,10 @@ class FrontendsController extends AppController {
             $msg = $this->generateError($upload->error);
             $this->Session->setFlash($msg);
             return $this->redirect($this->referer());
+             echo 'here'; exit;
         }
         $return['file_dst_name'] = $upload->file_dst_name;
+       
         return $return;
     }
 
@@ -459,8 +467,6 @@ class FrontendsController extends AppController {
         //$this->loadModel('Role');
         //  $role = $this->Role->findByName('customer');
         $this->layout = 'public-without-slider';
-
-
 
         //siggup form package
         $this->loadModel('Package');
@@ -689,9 +695,11 @@ Thank you,</br>
         if ($this->request->is('post')) {
             $this->Attachment->set($this->request->data);
             if ($this->Attachment->validates()) {
+                 
                 if (!empty($this->request->data['Attachment']['file']['name'])) {
                     $result = $this->processImg($this->request->data['Attachment'], 'file');
                     $this->request->data['Attachment']['file'] = (string) $result['file_dst_name'];
+                    
                 } else {
                     $this->request->data['Attachment']['file'] = '';
                 }
@@ -740,6 +748,7 @@ Thank you,</br>
                 $msg = $this->generateError($this->Attachment->validationErrors);
             }
             $this->Session->setFlash($msg);
+             //echo 'there222'; exit;
             return $this->redirect($this->referer());
         }
     }
