@@ -1,0 +1,1081 @@
+
+Wed, 25 Nov 2015 13:07:03 +0000: Request Serialization Begin
+Wed, 25 Nov 2015 13:07:03 +0000: Request  Serialization End
+Wed, 25 Nov 2015 13:07:03 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Wed, 25 Nov 2015 13:07:03 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[YOU_API_LOGIN_ID]]></name>
+    <transactionKey><![CDATA[YOUR_TRANSACTION_KEY]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448456823]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Wed, 25 Nov 2015 13:07:03 +0000:Sending http request via Curl
+Wed, 25 Nov 2015 13:07:04 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><ErrorResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><messages><resultCode>Error</resultCode><message><code>E00003</code><text>The 'AnetApi/xml/v1/schema/AnetApiSchema.xsd:transactionKey' element is invalid - The value 'YOUR_TRANSACTION_KEY' is invalid according to its datatype 'String' - The actual length is greater than the MaxLength value.</text></message></messages></ErrorResponse>
+
+Wed, 25 Nov 2015 13:07:04 +0000: Response De-Serialization Begin
+Wed, 25 Nov 2015 13:07:04 +0000: Response De-Serialization End
+Wed, 25 Nov 2015 13:10:35 +0000: Request Serialization Begin
+Wed, 25 Nov 2015 13:10:36 +0000: Request  Serialization End
+Wed, 25 Nov 2015 13:10:36 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Wed, 25 Nov 2015 13:10:36 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448457035]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Wed, 25 Nov 2015 13:10:36 +0000:Sending http request via Curl
+Wed, 25 Nov 2015 13:10:37 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448457035</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>AU55LF</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245533249</transId><refTransID /><transHash>A159F7344BCDC5ECB9F1E4DECD66EEC8</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Wed, 25 Nov 2015 13:10:37 +0000: Response De-Serialization Begin
+Wed, 25 Nov 2015 13:10:37 +0000: Response De-Serialization End
+Wed, 25 Nov 2015 13:17:37 +0000: Request Serialization Begin
+Wed, 25 Nov 2015 13:17:37 +0000: Request  Serialization End
+Wed, 25 Nov 2015 13:17:37 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Wed, 25 Nov 2015 13:17:37 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448457457]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Wed, 25 Nov 2015 13:17:37 +0000:Sending http request via Curl
+Wed, 25 Nov 2015 13:17:39 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448457457</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>3LWO8M</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245533461</transId><refTransID /><transHash>4E255B7BA2C0CFC3C6A8B72D80376D23</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Wed, 25 Nov 2015 13:17:39 +0000: Response De-Serialization Begin
+Wed, 25 Nov 2015 13:17:39 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 04:20:45 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 04:20:46 +0000: Request  Serialization End
+Mon, 30 Nov 2015 04:20:46 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 04:20:46 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448857244]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 04:20:46 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 04:20:49 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448857244</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>ODIDNC</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245742879</transId><refTransID /><transHash>ADA6521F4FF1043040799303EE640919</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 04:20:49 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 04:20:49 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 04:45:45 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 04:45:45 +0000: Request  Serialization End
+Mon, 30 Nov 2015 04:45:45 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 04:45:45 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448858745]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 04:45:45 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 04:45:47 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448858745</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>2ZIWE6</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245743543</transId><refTransID /><transHash>BBDD2DB5EE5086B89716E5F1149C9B73</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 04:45:47 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 04:45:47 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 05:14:53 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 05:14:53 +0000: Request  Serialization End
+Mon, 30 Nov 2015 05:14:53 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 05:14:53 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448860493]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 05:14:53 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 05:14:55 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448860493</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>4VEFZW</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245745295</transId><refTransID /><transHash>39F91A9C2BB6D2E079C9F5972B08CA42</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 05:14:55 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 05:14:55 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 08:51:27 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 08:51:27 +0000: Request  Serialization End
+Mon, 30 Nov 2015 08:51:27 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 08:51:27 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448873486]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 08:51:27 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 08:51:29 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448873486</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>TP33PK</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245753675</transId><refTransID /><transHash>5A6E4078B76B8973178F08BD5E1523E9</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 08:51:29 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 08:51:29 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 08:57:07 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 08:57:07 +0000: Request  Serialization End
+Mon, 30 Nov 2015 08:57:07 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 08:57:07 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448873827]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 08:57:07 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 08:57:08 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448873827</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>KWTLUJ</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245754092</transId><refTransID /><transHash>F6D705DF5DBAA633E6A3A39FB67EFEC3</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 08:57:08 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 08:57:08 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 08:58:20 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 08:58:20 +0000: Request  Serialization End
+Mon, 30 Nov 2015 08:58:20 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 08:58:20 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448873900]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 08:58:20 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 08:58:22 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448873900</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 08:58:22 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 08:58:22 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:00:00 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:00:00 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:00:00 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:00:00 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448874000]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:00:00 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:00:01 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448874000</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>X2NW9X</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245754354</transId><refTransID /><transHash>E41612970744B35C1D557ED5B78FD022</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:00:01 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:00:01 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:01:21 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:01:21 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:01:21 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:01:21 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448874080]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:01:21 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:01:22 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448874080</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:01:22 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:01:22 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:02:19 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:02:19 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:02:19 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:02:19 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448874139]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:02:19 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:02:21 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448874139</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>C6Q4YQ</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245754627</transId><refTransID /><transHash>DF6D4BA6BBB6F3444696C093FA52492A</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:02:21 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:02:21 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:46:27 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:46:28 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:46:28 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:46:28 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448876787]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:46:28 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:46:28 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448876787</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>FZSBD3</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245765473</transId><refTransID /><transHash>34DA9A38A8C947FDFB68B8D8B9F3C14D</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:46:28 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:46:28 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:49:03 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:49:03 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:49:03 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:49:03 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448876943]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:49:03 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:49:04 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448876943</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>GFCDIX</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245765577</transId><refTransID /><transHash>45FE411240EE869DA40E208498C56644</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:49:04 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:49:04 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:50:03 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:50:03 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:50:03 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:50:03 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877003]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:50:03 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:50:03 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877003</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:50:03 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:50:03 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:50:15 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:50:15 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:50:15 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:50:15 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877015]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:50:15 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:50:15 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877015</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:50:15 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:50:15 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:57:20 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:57:20 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:57:20 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:57:20 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877440]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:57:20 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:57:20 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877440</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>G28TSV</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245765803</transId><refTransID /><transHash>3B9143BD9A1F39BB8F72AAE255E455C7</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:57:20 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:57:21 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:58:08 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:58:08 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:58:08 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:58:08 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877488]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:58:08 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:58:09 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877488</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:58:09 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:58:09 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 09:59:24 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 09:59:24 +0000: Request  Serialization End
+Mon, 30 Nov 2015 09:59:24 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 09:59:24 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877564]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 09:59:24 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 09:59:24 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877564</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>VZQ67O</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245765861</transId><refTransID /><transHash>BECFC5B4D9E0E6D907BC5CE33ECDFAEB</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 09:59:24 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 09:59:24 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 10:01:18 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 10:01:18 +0000: Request  Serialization End
+Mon, 30 Nov 2015 10:01:18 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 10:01:18 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877678]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 10:01:18 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 10:01:18 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877678</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 10:01:18 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 10:01:18 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 10:01:42 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 10:01:42 +0000: Request  Serialization End
+Mon, 30 Nov 2015 10:01:42 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 10:01:42 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877702]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 10:01:42 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 10:01:42 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877702</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>C6AE57</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245765923</transId><refTransID /><transHash>004BA0A426648B3E71B635A183775A14</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 10:01:42 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 10:01:42 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 10:02:38 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 10:02:38 +0000: Request  Serialization End
+Mon, 30 Nov 2015 10:02:38 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 10:02:38 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448877758]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[4111111111111111]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 10:02:38 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 10:02:39 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448877758</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX1111</accountNumber><accountType>Visa</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 10:02:39 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 10:02:39 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 10:08:34 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 10:08:34 +0000: Request  Serialization End
+Mon, 30 Nov 2015 10:08:34 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 10:08:34 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448878114]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[370000000000002]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 10:08:34 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 10:08:34 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448878114</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>J9X877</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245766330</transId><refTransID /><transHash>81897C086BAFF335A48694C6D8006923</transHash><testRequest>0</testRequest><accountNumber>XXXX0002</accountNumber><accountType>AmericanExpress</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 10:08:34 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 10:08:34 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 10:09:02 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 10:09:02 +0000: Request  Serialization End
+Mon, 30 Nov 2015 10:09:02 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 10:09:02 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448878142]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[370000000000002]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 10:09:02 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 10:09:02 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448878142</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX0002</accountNumber><accountType>AmericanExpress</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 10:09:02 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 10:09:02 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 10:09:15 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 10:09:15 +0000: Request  Serialization End
+Mon, 30 Nov 2015 10:09:15 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 10:09:15 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448878155]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[370000000000002]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 10:09:15 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 10:09:16 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448878155</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX0002</accountNumber><accountType>AmericanExpress</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 10:09:16 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 10:09:16 +0000: Response De-Serialization End
+Mon, 30 Nov 2015 10:10:00 +0000: Request Serialization Begin
+Mon, 30 Nov 2015 10:10:00 +0000: Request  Serialization End
+Mon, 30 Nov 2015 10:10:00 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Mon, 30 Nov 2015 10:10:00 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1448878200]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Mon, 30 Nov 2015 10:10:00 +0000:Sending http request via Curl
+Mon, 30 Nov 2015 10:10:01 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1448878200</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>I6MZN8</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2245766357</transId><refTransID /><transHash>34195A0D7C87F183E43F24CDBEC84CAF</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Mon, 30 Nov 2015 10:10:01 +0000: Response De-Serialization Begin
+Mon, 30 Nov 2015 10:10:01 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:03:03 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:03:03 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:03:03 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:03:03 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452848583]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:03:03 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:03:04 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452848583</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>7S91KG</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2248929542</transId><refTransID /><transHash>271191EB31F3573E939015C6C986BE04</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:03:04 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:03:04 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:05:28 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:05:28 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:05:28 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:05:28 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452848728]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:05:28 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:05:28 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452848728</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>D25GYM</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2248930135</transId><refTransID /><transHash>3A9AC7749EBBC0A04999A3EF07F97AED</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:05:28 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:05:28 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:05:53 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:05:53 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:05:53 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:05:53 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452848753]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:05:53 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:05:53 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452848753</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:05:53 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:05:53 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:13:06 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:13:06 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:13:06 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:13:06 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452849186]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:13:06 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:13:07 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452849186</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>ZUW3ZO</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2248930367</transId><refTransID /><transHash>CFDE99A7B8A356323A7578766A90710B</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:13:07 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:13:07 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:14:36 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:14:36 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:14:36 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:14:36 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452849276]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:14:36 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:14:36 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452849276</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:14:36 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:14:36 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:15:05 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:15:05 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:15:05 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:15:05 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452849305]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:15:05 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:15:12 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452849305</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>UIN7KZ</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2248930423</transId><refTransID /><transHash>9E244B416A5893F90BD1D217F312BFD3</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:15:12 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:15:12 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:16:27 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:16:27 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:16:27 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:16:27 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452849387]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:16:27 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:16:27 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452849387</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:16:27 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:16:28 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:17:16 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:17:16 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:17:16 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:17:16 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452849436]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:17:16 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:17:16 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452849436</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>IYE0Z3</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2248930660</transId><refTransID /><transHash>DDD5E52AF8FC5DB7DCCBF4DB3EF048C1</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:17:16 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:17:16 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:17:24 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:17:24 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:17:24 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:17:24 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452849444]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:17:24 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:17:24 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452849444</refId><messages><resultCode>Error</resultCode><message><code>E00027</code><text>The transaction was unsuccessful.</text></message></messages><transactionResponse><responseCode>3</responseCode><authCode /><avsResultCode>P</avsResultCode><cvvResultCode /><cavvResultCode /><transId>0</transId><refTransID /><transHash>820F0DC568EF435C15B4A7BD2A2B69CA</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><errors><error><errorCode>11</errorCode><errorText>A duplicate transaction has been submitted.</errorText></error></errors></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:17:24 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:17:24 +0000: Response De-Serialization End
+Fri, 15 Jan 2016 09:29:46 +0000: Request Serialization Begin
+Fri, 15 Jan 2016 09:29:46 +0000: Request  Serialization End
+Fri, 15 Jan 2016 09:29:46 +0000: Url: https://apitest.authorize.net/xml/v1/request.api
+Fri, 15 Jan 2016 09:29:46 +0000:Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[95x9PuD6b2]]></name>
+    <transactionKey><![CDATA[547z56Vcbs3Nz9R9]]></transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1452850186]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>151.51</amount>
+    <payment>
+      <creditCard>
+        <cardNumber><![CDATA[6011000000000012]]></cardNumber>
+        <expirationDate><![CDATA[2038-12]]></expirationDate>
+      </creditCard>
+    </payment>
+  </transactionRequest>
+</createTransactionRequest>
+
+Sending 'XML' Request type
+Fri, 15 Jan 2016 09:29:46 +0000:Sending http request via Curl
+Fri, 15 Jan 2016 09:29:47 +0000:Response from AnetApi: 
+﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1452850186</refId><messages><resultCode>Ok</resultCode><message><code>I00001</code><text>Successful.</text></message></messages><transactionResponse><responseCode>1</responseCode><authCode>P6HLF7</authCode><avsResultCode>Y</avsResultCode><cvvResultCode /><cavvResultCode>2</cavvResultCode><transId>2248934096</transId><refTransID /><transHash>A95F7CD0906883B3CF37C49C481E045B</transHash><testRequest>0</testRequest><accountNumber>XXXX0012</accountNumber><accountType>Discover</accountType><messages><message><code>1</code><description>This transaction has been approved.</description></message></messages></transactionResponse></createTransactionResponse>
+
+Fri, 15 Jan 2016 09:29:47 +0000: Response De-Serialization Begin
+Fri, 15 Jan 2016 09:29:47 +0000: Response De-Serialization End
