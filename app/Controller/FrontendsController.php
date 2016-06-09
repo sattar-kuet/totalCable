@@ -374,12 +374,6 @@ class FrontendsController extends AppController {
         }
     }
 
-    function about_us(){
-        
-    }
-    
-    
-            
     function newses() {
         
     }
